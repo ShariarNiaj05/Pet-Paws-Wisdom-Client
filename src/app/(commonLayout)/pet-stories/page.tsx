@@ -21,7 +21,7 @@ const CarsPage = async () => {
     <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
       {/* Page Title */}
       <p className="text-4xl font-bold text-gray-800 dark:text-gray-100 mt-6 mb-14 tracking-wider">
-        All Cars
+        Pet Stories
       </p>
 
       {/* Cards Grid */}
@@ -41,7 +41,7 @@ const CarsPage = async () => {
               </h4>
             </CardHeader>
 
-            {/* Car Image */}
+            {/*  Image */}
             <Image
               // removeWrapper
               alt={item.name}
