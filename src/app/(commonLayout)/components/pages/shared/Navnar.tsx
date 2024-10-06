@@ -27,8 +27,8 @@ export default function NavBar() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="/cars">
-            Cars
+          <Link color="foreground" href="/pet-stories">
+            Pet Stories
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
