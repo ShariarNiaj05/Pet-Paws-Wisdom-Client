@@ -5,7 +5,7 @@ import AddCar from "./components/AddCar";
 const CarsManagement = async () => {
   const res: any = await nexiosInstance.get("/cars", {
     next: {
-      tags: ["carsTable"],
+      tags: ["petStoriesTable"],
     },
   });
 

@@ -4,7 +4,10 @@
 import nexiosInstance from "@/config/nexios.config";
 import { revalidateTag } from "next/cache";
 
-export const createCar = async (_pre: any, formData: any): Promise<any> => {
+export const createPetStory = async (
+  _pre: any,
+  formData: any
+): Promise<any> => {
   try {
     console.log(formData, "formData");
 
@@ -14,7 +17,7 @@ export const createCar = async (_pre: any, formData: any): Promise<any> => {
       passengerCapacity: Number(Object.fromEntries(formData).passengerCapacity),
     };
 
-    const res = await nexiosInstance.post("/cars", newFormData);
+    const res = await nexiosInstance.post("/pet-stories", newFormData);
 
     revalidateTag("carsTable");
 
