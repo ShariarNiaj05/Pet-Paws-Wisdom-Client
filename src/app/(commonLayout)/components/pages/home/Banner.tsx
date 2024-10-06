@@ -12,8 +12,8 @@ export default function Banner() {
               Offers
             </h1>
             <h4 className=" text-xl text-gray-500 my-4">
-              Find your ideal ride for any adventure with our diverse range of
-              affordable and dependable car rentals
+              From essential care advice to inspiring pet tales, Pet Paws Wisdom
+              brings a world of pet love to your fingertips.
             </h4>
             <BannerButton />
           </div>
