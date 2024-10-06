@@ -19,7 +19,7 @@ export const createPetStory = async (
 
     const res = await nexiosInstance.post("/pet-stories", newFormData);
 
-    revalidateTag("carsTable");
+    revalidateTag("petStoriesTable");
 
     console.log(res.data, "res.data");
 
