@@ -1,4 +1,3 @@
-
 import { Car, Cog, DollarSign, History, Home } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,7 +7,6 @@ import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { useSidebarContext } from "@/app/(dashboardLayout)/layout/layout-context";
 import { CollapseItems } from "./collapse-items";
-
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -26,7 +24,7 @@ export const SidebarWrapper = () => {
           {" "}
           <Link className="flex" href="/">
             <Cog />
-            <p className="font-bold text-inherit px-4">APOLLO GEARS</p>
+            <p className="font-bold text-inherit px-4">Pet Paws Wisdom</p>
           </Link>
         </div>
 

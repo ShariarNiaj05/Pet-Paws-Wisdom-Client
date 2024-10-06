@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { AdminLayout } from "./layout/adminLayout";
 
 export const metadata: Metadata = {
-  title: "Apollo Gears Dashboard",
-  description: "Welcome to Apollo Gears: The Ultimate Ride Sharing Platform",
+  title: "Pet Paws Wisdom Dashboard",
+  description:
+    "From essential care advice to inspiring pet tales, Pet Paws Wisdom brings a world of pet love to your fingertips.",
 };
 
 export default function AdminDashboardLayout({

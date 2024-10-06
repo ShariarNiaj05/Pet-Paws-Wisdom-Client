@@ -3,8 +3,9 @@ import "./globals.css";
 import Providers from "./lib/providers";
 
 export const metadata: Metadata = {
-  title: "Apollo Gears",
-  description: "Welcome to Apollo Gears: The Ultimate Ride Sharing Platform",
+  title: "Pet Paws Wisdom",
+  description:
+    "From essential care advice to inspiring pet tales, Pet Paws Wisdom brings a world of pet love to your fingertips",
 };
 
 export default function RootLayout({
