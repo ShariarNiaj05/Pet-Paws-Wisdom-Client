@@ -8,10 +8,13 @@ export default function Banner() {
         <div className="flex items-center justify-between">
           <div className="w-2/5">
             <h1 className="text-6xl font-bold mb-2 text-default-900">
-              Explore the Finest <span className="text-red-500">Global</span>{" "}
-              Offers
+              A world of{" "}
+              <span className="text-red-500">
+                love, care, and heartwarming{" "}
+              </span>
+              stories for your beloved pets
             </h1>
-            <h4 className=" text-xl text-gray-500 my-4">
+            <h4 className="text-xl text-gray-500 my-4">
               From essential care advice to inspiring pet tales, Pet Paws Wisdom
               brings a world of pet love to your fingertips.
             </h4>
