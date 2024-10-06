@@ -48,6 +48,5 @@ export const config = {
     "/register",
     "/dashboard/:page*",
     "/admin-dashboard/:page*",
-    "/driver-dashboard/:page*",
   ],
 };
