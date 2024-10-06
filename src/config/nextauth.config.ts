@@ -20,6 +20,7 @@ export const AuthOptions: NextAuthOptions = {
         if (!profile || !account) {
           return false;
         }
+        // need to implement custom authentication
 
         if (account?.provider === "google") {
           const response: any = await nexiosInstance.post("/auth/login", {
