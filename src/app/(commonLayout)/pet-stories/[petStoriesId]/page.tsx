@@ -22,7 +22,7 @@ const PetStoriesDetailsPage = async ({
         key={data?._id}
         className="relative w-full max-w-4xl rounded-lg overflow-hidden shadow-lg"
       >
-        {/* Car Image with Overlay */}
+        {/*  Image with Overlay */}
         <div className="relative">
           <Image
             // removeWrapper
