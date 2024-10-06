@@ -24,7 +24,7 @@ const config: Config = {
           900: "#43302b",
         },
         primary: "#C38D94",
-        secondary: "",
+        secondary: "#A76571",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

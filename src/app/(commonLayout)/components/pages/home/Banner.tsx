@@ -13,9 +13,9 @@ export default function Banner() {
                 love, care, and heartwarming{" "}
               </span>
               stories for your beloved{" "}
-              <span className="text-text-primary">pets</span>
+              <span className="text-primary">pets</span>
             </h1>
-            <h4 className="text-xl text-gray-500 my-4">
+            <h4 className="text-xl text-secondary my-4">
               From essential care advice to inspiring pet tales, Pet Paws Wisdom
               brings a world of pet love to your fingertips.
             </h4>
