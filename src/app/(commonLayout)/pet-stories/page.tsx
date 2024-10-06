@@ -5,12 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const PetStoriesPage = async () => {
-  /*   const res = await fetch("http://localhost:5000/api/v1/cars", {
-    next: {},
-    cache: "no-store",
-  }); */
-
-  const { data }: any = await nexiosInstance.get("/cars", {
+  const { data }: any = await nexiosInstance.get("/pet-stories", {
     cache: "no-store",
     next: {},
   });
