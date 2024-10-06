@@ -55,7 +55,7 @@ const PetStoriesPage = async () => {
                 <p className="text-xs text-white/70">Color: {item.color}</p>
               </div>
               <Link
-                href={`cars/${item._id}`}
+                href={`pet-stories/${item._id}`}
                 className="text-sm font-semibold text-blue-400 dark:text-blue-300 hover:underline"
               >
                 View Details
