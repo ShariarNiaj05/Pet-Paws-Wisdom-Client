@@ -4,7 +4,7 @@ import { Card, CardFooter, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 
-const CarsPage = async () => {
+const PetStoriesPage = async () => {
   /*   const res = await fetch("http://localhost:5000/api/v1/cars", {
     next: {},
     cache: "no-store",
@@ -73,4 +73,4 @@ const CarsPage = async () => {
   );
 };
 
-export default CarsPage;
+export default PetStoriesPage;
