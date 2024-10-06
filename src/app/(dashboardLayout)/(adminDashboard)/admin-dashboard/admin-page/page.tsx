@@ -2,8 +2,8 @@
 import nexiosInstance from "@/config/nexios.config";
 import AddCar from "./components/AddCar";
 
-const CarsManagement = async () => {
-  const res: any = await nexiosInstance.get("/cars", {
+const PetStoriesManagement = async () => {
+  const res: any = await nexiosInstance.get("/pet-stories", {
     next: {
       tags: ["petStoriesTable"],
     },
@@ -22,4 +22,4 @@ const CarsManagement = async () => {
   );
 };
 
-export default CarsManagement;
+export default PetStoriesManagement;
