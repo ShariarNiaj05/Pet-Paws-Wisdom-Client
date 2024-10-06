@@ -9,11 +9,11 @@ export default function Banner() {
           <div className="w-2/5">
             <h1 className="text-6xl font-bold mb-2 text-default-900">
               A world of{" "}
-              <span className="text-red-500">
+              <span className="text-primary">
                 love, care, and heartwarming{" "}
               </span>
               stories for your beloved{" "}
-              <span className="text-red-500">pets</span>
+              <span className="text-text-primary">pets</span>
             </h1>
             <h4 className="text-xl text-gray-500 my-4">
               From essential care advice to inspiring pet tales, Pet Paws Wisdom
