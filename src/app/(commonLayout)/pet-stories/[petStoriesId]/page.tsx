@@ -4,7 +4,7 @@ import nexiosInstance from "@/config/nexios.config";
 import { Card, CardFooter, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 
-const CarDetailsPage = async ({
+const PetStoriesDetailsPage = async ({
   params,
 }: // searchParams,
 {
@@ -14,7 +14,7 @@ const CarDetailsPage = async ({
   console.log(params);
   const { id } = params;
 
-  const res: any = await nexiosInstance.get(`/cars/${id}`);
+  const res: any = await nexiosInstance.get(`/pet-stories/${id}`);
   const data = res?.data?.data;
   return (
     <div className="min-h-screen flex justify-center items-center p-4 bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-700">
@@ -77,4 +77,4 @@ const CarDetailsPage = async ({
   );
 };
 
-export default CarDetailsPage;
+export default PetStoriesDetailsPage;
