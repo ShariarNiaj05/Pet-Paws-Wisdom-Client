@@ -37,10 +37,12 @@ export const AdminSidebarWrapper = () => {
             />
             <SidebarMenu title="Main Menu">
               <SidebarItem
-                isActive={pathname === "/admin-dashboard/cars-management"}
-                title="cars manage"
+                isActive={
+                  pathname === "/admin-dashboard/pet-stories-management"
+                }
+                title="pet stories manage"
                 icon={<Car />}
-                href="/admin-dashboard/cars-management"
+                href="/admin-dashboard/pet-stories-management"
               />
               <SidebarItem
                 isActive={pathname === "/admin-dashboard/users-management"}
