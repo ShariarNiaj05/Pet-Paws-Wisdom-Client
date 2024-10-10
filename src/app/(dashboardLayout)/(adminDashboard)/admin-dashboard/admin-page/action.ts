@@ -34,7 +34,7 @@ export const createCar = async (_pre: any, formData: any): Promise<any> => {
   try {
     console.log(formData, "formData");
 
-    /*     const newFormData = {
+    const newFormData = {
       ...Object.fromEntries(formData),
       rating: Number(Object.fromEntries(formData).rating),
       passengerCapacity: Number(Object.fromEntries(formData).passengerCapacity),
@@ -46,7 +46,7 @@ export const createCar = async (_pre: any, formData: any): Promise<any> => {
 
     console.log(res.data, "res.data");
 
-    return res.data; */
+    return res.data;
   } catch (error) {
     console.log(error);
     throw error;
