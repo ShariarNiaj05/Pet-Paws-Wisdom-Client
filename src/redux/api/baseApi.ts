@@ -7,7 +7,8 @@ export const baseApi = createApi({
     baseUrl: "https://pet-paws-wisdom-server.vercel.app/api/v1",
     // baseUrl: "http://localhost:5000/api/v1",
     prepareHeaders: (headers, { getState }) => {
-      const token = (getState() as RootState).auth?.auth.token;
+      const token = (getState() as RootState).auth?.token;
+      // const token = (getState() as RootState).auth?.auth.token;
 
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
