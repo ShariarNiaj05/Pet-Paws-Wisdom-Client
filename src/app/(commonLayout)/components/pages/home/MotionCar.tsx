@@ -13,6 +13,7 @@ export default function MotionCar() {
         alt="Card background"
         className="object-cover rounded-xl"
         src="../../assets/hero-car.svg"
+        // height={450}
       />
     </motion.div>
   );
