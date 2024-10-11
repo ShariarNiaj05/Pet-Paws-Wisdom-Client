@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { baseApi } from "./api/baseApi";
-import authReducer from "./features/auth/authSlice";
+import { baseApi } from "../redux/api/baseApi";
+import authReducer from "../redux/features/auth/authSlice";
 
 import {
   persistReducer,

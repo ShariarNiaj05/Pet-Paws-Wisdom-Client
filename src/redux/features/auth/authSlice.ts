@@ -1,4 +1,4 @@
-import { RootState } from "@/redux/store";
+import { RootState } from "@/lib/store";
 import { createSlice } from "@reduxjs/toolkit";
 
 export type TUser = {
