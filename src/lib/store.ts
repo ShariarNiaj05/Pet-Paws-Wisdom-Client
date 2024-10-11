@@ -40,6 +40,18 @@ const persistedAuthReducer = persistReducer(persistConfig, rootReducer);
     }).concat(baseApi.middleware),
 }); */
 
+// Create a makeStore function
+export const makeStore = () =>
+  configureStore({
+    reducer: persistedAuthReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
+      }).concat(baseApi.middleware),
+  });
+
 // Persistor
 export const persistor = persistStore(makeStore);
 
