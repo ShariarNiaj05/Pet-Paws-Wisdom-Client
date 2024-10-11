@@ -1,9 +1,11 @@
+import LoginForm from "../components/login/LoginForm";
 import GoogleLoginBtn from "../components/pages/shared/GoogleLoginBtn";
 
 const LoginPage = () => {
   return (
     <>
-      <GoogleLoginBtn />
+      {/* <GoogleLoginBtn /> */}
+      <LoginForm />
     </>
   );
 };
