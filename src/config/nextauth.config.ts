@@ -15,18 +15,19 @@ export const AuthOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ profile, account }: any) {
       try {
-        console.log({ profile, account });
+        console.log("profile", profile);
+        console.log("account", account);
 
         if (!profile || !account) {
           return false;
         }
         // need to implement custom authentication
 
-        if (account?.provider === "google") {
-          const response: any = await nexiosInstance.post("/auth/login", {
-            name: profile.name,
+        if (account?.provider !== "google") {
+          const response: any = await nexiosInstance.post("/login", {
+            // name: profile.name,
             email: profile.email,
-            img: profile.picture,
+            // img: profile.picture,
           });
 
           if (
