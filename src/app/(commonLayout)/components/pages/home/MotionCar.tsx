@@ -12,7 +12,7 @@ export default function MotionCar() {
       <Image
         alt="Card background"
         className="object-cover rounded-xl"
-        src="../../assets/hero-car.svg"
+        src="../../assets/hero-cat-1.jpg"
         // height={450}
       />
     </motion.div>
