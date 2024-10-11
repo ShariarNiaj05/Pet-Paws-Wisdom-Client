@@ -1,7 +1,7 @@
 "use client";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { useState } from "react";
-import { Button, Input, Card, Text } from "@nextui-org/react";
+import { Button, Input, Card } from "@nextui-org/react";
 import nexiosInstance from "@/config/nexios.config";
 
 const LoginForm = () => {
@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   //   const router = useRouter();
-
+  console.log(nexiosInstance);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
