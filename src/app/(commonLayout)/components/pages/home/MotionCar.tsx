@@ -11,9 +11,10 @@ export default function MotionCar() {
     >
       <Image
         alt="Card background"
-        className="object-cover rounded-xl"
+        className="object-cover p-5 rounded-xl"
         src="../../assets/hero-cat-1.jpg"
-        // height={450}
+        height={500}
+        width={750}
       />
     </motion.div>
   );
