@@ -31,7 +31,7 @@ const LoginForm = () => {
     }
   };
   return (
-    <Card css={{ p: "$10", mw: "400px", margin: "auto", mt: "50px" }}>
+    <Card>
       <Text h3>Login</Text>
       {error && <Text color="error">{error}</Text>}
       <form onSubmit={handleSubmit}>
@@ -45,7 +45,7 @@ const LoginForm = () => {
           type="email"
           required
         />
-        <Input.Password
+        <Input
           fullWidth
           clearable
           underlined
@@ -54,7 +54,7 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <Button type="submit" shadow color="primary" css={{ mt: "$10" }}>
+        <Button type="submit" color="primary">
           Login
         </Button>
       </form>
