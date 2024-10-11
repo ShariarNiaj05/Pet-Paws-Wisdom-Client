@@ -27,7 +27,7 @@ const rootReducer = combineReducers({
 
 const persistedAuthReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = configureStore({
+/* export const makeStore = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
     auth: persistedAuthReducer,
@@ -38,10 +38,10 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(baseApi.middleware),
-});
+}); */
 
 // Persistor
-export const persistor = persistStore(store);
+export const persistor = persistStore(makeStore);
 
 // Infer the type of makeStore
 // export type AppStore = ReturnType<typeof store>;
