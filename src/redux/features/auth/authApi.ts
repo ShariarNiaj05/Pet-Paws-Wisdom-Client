@@ -1,4 +1,4 @@
-import { baseApi } from "../api/baseApi";
+import { baseApi } from "@/redux/api/baseApi";
 
 const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -16,13 +16,6 @@ const authApi = baseApi.injectEndpoints({
         body: userInfo,
       }),
     }),
-    /*  updateProfile: builder.mutation({
-      query: (userInfo) => ({
-        url: "/auth/users/me",
-        method: "PUT",
-        body: userInfo,
-      }),
-    }), */
   }),
 });
 
