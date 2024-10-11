@@ -32,8 +32,8 @@ const LoginForm = () => {
   };
   return (
     <Card>
-      <Text h3>Login</Text>
-      {error && <Text color="error">{error}</Text>}
+      <h3>Login</h3>
+      {/* {error && <Text color="error">{error}</Text>} */}
       <form onSubmit={handleSubmit}>
         <Input
           fullWidth
