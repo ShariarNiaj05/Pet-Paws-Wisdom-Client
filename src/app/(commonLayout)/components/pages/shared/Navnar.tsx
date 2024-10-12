@@ -8,11 +8,13 @@ import {
 import { Cog } from "lucide-react";
 import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import { useUser } from "@/context/UserContext";
+import { useContext } from "react";
+import { UserContext } from "@/context/UserContext";
 
 export default function NavBar() {
-  const { user } = useUser();
-  console.log("user", user);
+  const { user } = useContext(UserContext);
+
+  console.log("user from navbar", user);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
     admin: "/dashboard/admin",

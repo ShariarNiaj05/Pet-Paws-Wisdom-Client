@@ -12,7 +12,9 @@ interface UserContextType {
 }
 
 // Create the context with default values
-const UserContext = createContext<UserContextType | undefined>(undefined);
+export const UserContext = createContext<UserContextType | undefined>(
+  undefined
+);
 
 // Hook to access user context
 export const useUser = () => {
@@ -39,8 +41,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
       const decodedUser = jwtDecode(accessToken);
       setUser(decodedUser); // Set the decoded user
     }
-  }, []);
-  console.log("useUser from provider", user);
+  }, [user, setUser]);
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}
