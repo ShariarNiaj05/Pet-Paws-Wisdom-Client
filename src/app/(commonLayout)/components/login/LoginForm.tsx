@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 // import { useRouter } from "next/router";
@@ -38,9 +39,9 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit}>
         <Input
           fullWidth
-          clearable
-          underlined
-          labelPlaceholder="Email"
+          // clearable
+          // underlined
+          // labelPlaceholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
@@ -48,9 +49,9 @@ const LoginForm = () => {
         />
         <Input
           fullWidth
-          clearable
-          underlined
-          labelPlaceholder="Password"
+          // clearable
+          // underlined
+          // labelPlaceholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
