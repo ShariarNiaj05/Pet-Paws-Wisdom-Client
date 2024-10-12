@@ -9,9 +9,15 @@ import { Cog } from "lucide-react";
 import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { decode } from "@/helpers/jwtHelpers";
+import { cookies } from "next/headers";
 
 export default function NavBar() {
-  const { role: user } = decode(localStorage.getItem("accessToken")) as any;
+  const accessToken = cookies().get("accessToken")?.value;
+  let user = null;
+  if (accessToken) {
+    user = decode(accessToken);
+  }
+
   console.log("role in navbar", role);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
