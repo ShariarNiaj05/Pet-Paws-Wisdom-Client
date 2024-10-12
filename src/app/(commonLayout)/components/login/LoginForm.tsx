@@ -13,7 +13,6 @@ const LoginForm = () => {
   console.log(nexiosInstance);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const navigate = naviate;
     try {
       const response: any = await nexiosInstance.post("/auth/login", {
         email,
