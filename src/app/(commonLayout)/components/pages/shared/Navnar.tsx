@@ -17,7 +17,7 @@ export default function NavBar() {
     user: "/dashboard",
     admin: "/dashboard/admin",
   };
-
+  if (!user) return <p>Loading...</p>;
   return (
     <Navbar maxWidth="2xl">
       <NavbarBrand>

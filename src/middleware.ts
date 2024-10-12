@@ -23,10 +23,11 @@ export async function middleware(request: NextRequest) {
   // role based authorization
   let decodedToken = null;
   decodedToken = decode(accessToken) as any;
-  console.log("decodedToken", decodedToken);
+  const response = NextResponse.next();
+  response.cookies.set("userRole", decodedToken.role);
+  response.cookies.set("userInfo", JSON.stringify(decodedToken));
   const { role } = decodedToken;
-  console.log(role, "role");
-  console.log(pathname, "pathname");
+
   if (role === "admin" && pathname.match(/^\/admin-dashboard/)) {
     return NextResponse.next();
   }
