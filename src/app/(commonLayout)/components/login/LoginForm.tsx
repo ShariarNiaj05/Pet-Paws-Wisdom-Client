@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Input, Card } from "@nextui-org/react";
 import nexiosInstance from "@/config/nexios.config";
+import { redirect } from "next/navigation";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ const LoginForm = () => {
   console.log(nexiosInstance);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    const navigate = naviate;
     try {
       const response: any = await nexiosInstance.post("/auth/login", {
         email,
@@ -25,7 +26,7 @@ const LoginForm = () => {
       localStorage.setItem("token", token);
 
       // Redirect to dashboard after successful login
-      router.push("/dashboard");
+      redirect("/dashboard");
     } catch (error: any) {
       setError(error.response?.data?.message || "Login failed");
     }
