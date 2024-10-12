@@ -13,7 +13,6 @@ export default function NavBar() {
   const routeMap: Record<string, string> = {
     user: "/dashboard",
     admin: "/dashboard/admin",
-    driver: "/dashboard/driver",
   };
 
   return (
@@ -37,8 +36,8 @@ export default function NavBar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          {/* {user && <Link href={routeMap[user?.role]}>Dashboard</Link>} */}
-          <Link href={routeMap.user}>Dashboard</Link>
+          {user && <Link href={routeMap[user?.role]}>Dashboard</Link>}
+          {/* <Link href={routeMap.user}>Dashboard</Link> */}
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
