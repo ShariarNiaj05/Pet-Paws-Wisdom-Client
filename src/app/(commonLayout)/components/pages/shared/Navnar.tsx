@@ -8,8 +8,11 @@ import {
 import { Cog } from "lucide-react";
 import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { decode } from "@/helpers/jwtHelpers";
 
 export default function NavBar() {
+  const { role: user } = decode(localStorage.getItem("accessToken")) as any;
+  console.log("role in navbar", role);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
     admin: "/dashboard/admin",
