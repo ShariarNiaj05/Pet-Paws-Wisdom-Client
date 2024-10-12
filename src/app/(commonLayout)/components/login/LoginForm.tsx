@@ -14,11 +14,11 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await nexiosInstance.post("/login", {
+      const response = await nexiosInstance.post("/auth/login", {
         email,
         password,
       });
-      console.log(response);
+      console.log("response", response);
       //   const { token } = response.data;
 
       // Save token in localStorage
