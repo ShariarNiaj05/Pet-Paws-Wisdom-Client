@@ -12,7 +12,7 @@ import { useUser } from "@/context/UserContext";
 
 export default function NavBar() {
   const { user } = useUser();
-
+  console.log("user", user);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
     admin: "/dashboard/admin",
