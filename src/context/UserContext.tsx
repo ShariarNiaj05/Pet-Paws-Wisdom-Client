@@ -40,7 +40,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
       setUser(decodedUser); // Set the decoded user
     }
   }, []);
-
+  console.log("useUser from provider", user);
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}
