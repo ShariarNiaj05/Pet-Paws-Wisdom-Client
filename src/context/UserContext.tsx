@@ -32,6 +32,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
       .split("; ")
       .find((row) => row.startsWith("accessToken="))
       ?.split("=")[1];
+    console.log("Access token from cookies:", accessToken);
 
     if (accessToken) {
       const decodedUser = jwtDecode(accessToken);
