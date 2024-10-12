@@ -14,18 +14,18 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await nexiosInstance.post("/auth/login", {
+      const response: any = await nexiosInstance.post("/auth/login", {
         email,
         password,
       });
       console.log("response", response);
-      //   const { token } = response.data;
+      const { token } = response.data;
 
       // Save token in localStorage
-      //   localStorage.setItem("token", token);
+      localStorage.setItem("token", token);
 
       // Redirect to dashboard after successful login
-      //   router.push("/dashboard");
+      router.push("/dashboard");
     } catch (error: any) {
       setError(error.response?.data?.message || "Login failed");
     }
