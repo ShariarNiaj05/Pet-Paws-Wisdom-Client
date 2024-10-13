@@ -14,6 +14,7 @@ export default function NavBar() {
   const { role, userId } = useUser();
 
   console.log("user from navbar", role);
+  console.log("userId from navbar", userId);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
     // admin: "/dashboard/admin",
