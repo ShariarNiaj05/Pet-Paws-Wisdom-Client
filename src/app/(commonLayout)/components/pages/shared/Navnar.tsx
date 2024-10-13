@@ -1,5 +1,6 @@
 "use client";
 import {
+  Button,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -36,11 +37,11 @@ export default function NavBar() {
             Pet Stories
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        {/* <NavbarItem isActive>
           <Link href="#" aria-current="page">
             Customers
           </Link>
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarItem>
           {user && <Link href={routeMap[user?.role]}>Dashboard</Link>}
           {/* <Link href={routeMap.user}>Dashboard</Link> */}
@@ -51,9 +52,9 @@ export default function NavBar() {
           <ThemeSwitcher />
         </NavbarItem>
 
-        {/* {user ? (
+        {user ? (
           <NavbarItem>
-            <Button onClick={logOutUser} color="primary" variant="flat">
+            <Button color="primary" variant="flat">
               Logout
             </Button>
           </NavbarItem>
@@ -61,7 +62,7 @@ export default function NavBar() {
           <NavbarItem className="hidden lg:flex">
             <Link href="/login">Login</Link>
           </NavbarItem>
-        )} */}
+        )}
       </NavbarContent>
     </Navbar>
   );
