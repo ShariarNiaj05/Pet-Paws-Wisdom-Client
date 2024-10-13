@@ -1,5 +1,6 @@
+"use client";
+
 import React, { createContext, useContext } from "react";
-import { headers } from "next/headers";
 
 interface UserContextType {
   role: string;
@@ -8,15 +9,11 @@ interface UserContextType {
 
 const UserContext = createContext<UserContextType | null>(null);
 
-export async function UserProvider({
+export function UserInfoClient({
+  role,
+  userId,
   children,
-}: {
-  children: React.ReactNode;
-}) {
-  const headersList = headers();
-  const role = headersList.get("X-User-Role") || "";
-  const userId = headersList.get("X-User-Id") || "";
-
+}: UserContextType & { children: React.ReactNode }) {
   return (
     <UserContext.Provider value={{ role, userId }}>
       {children}
@@ -24,10 +21,10 @@ export async function UserProvider({
   );
 }
 
-export async function useUser() {
+export function useUser() {
   const context = useContext(UserContext);
   if (!context) {
-    throw new Error("useUser must be used within a UserProvider");
+    throw new Error("useUser must be used within a UserInfoClient");
   }
   return context;
 }
