@@ -6,7 +6,6 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/react";
-import { Cog } from "lucide-react";
 import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { useContext } from "react";
@@ -26,11 +25,9 @@ export default function NavBar() {
     <Navbar maxWidth="2xl">
       <NavbarBrand>
         <Link className="flex" href="/">
-          <Cog />
           <p className="font-bold text-inherit px-4">Pet Paws Wisdom</p>
         </Link>
       </NavbarBrand>
-
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link color="foreground" href="/pet-stories">
