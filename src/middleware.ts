@@ -24,11 +24,15 @@ export async function middleware(request: NextRequest) {
   let decodedToken = null;
   decodedToken = decode(accessToken) as any;
   const response = NextResponse.next();
-
+  const { role, _id: userId } = decodedToken;
   console.log("decodedToken from middleware", decodedToken);
-  response.cookies.set("userRole", decodedToken.role);
-  response.cookies.set("userInfo", JSON.stringify(decodedToken));
-  const { role } = decodedToken;
+  // response.cookies.set("userRole", decodedToken.role);
+  // response.cookies.set("userInfo", JSON.stringify(decodedToken));
+  // Add user info to headers
+  response.headers.set("X-User-Role", role);
+  response.headers.set("X-User-Id", userId);
+
+  // const { role } = decodedToken;
 
   if (role === "admin" && pathname.match(/^\/admin-dashboard/)) {
     return NextResponse.next();
