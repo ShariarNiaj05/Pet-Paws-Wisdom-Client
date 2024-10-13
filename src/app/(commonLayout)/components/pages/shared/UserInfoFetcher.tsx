@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import { UserInfoClient } from "./UserInfoClient";
 
 export function UserInfoFetcher() {
   const headersList = headers();

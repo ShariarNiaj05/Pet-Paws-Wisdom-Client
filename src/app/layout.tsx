@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Providers from "./lib/providers";
+import { UserInfoClient } from "./(commonLayout)/components/pages/shared/UserInfoClient";
+import { UserInfoFetcher } from "./(commonLayout)/components/pages/shared/UserInfoFetcher";
 
 export const metadata: Metadata = {
   title: "Pet Paws Wisdom",
@@ -16,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <Providers>
-          <UserProvider>
-            <div className="mx-auto container">{children}</div>
-          </UserProvider>
-        </Providers>
+        <UserInfoFetcher>
+          {(role, userId) => (
+            <UserInfoClient role={role} userId={userId}>
+              {children}
+            </UserInfoClient>
+          )}
+        </UserInfoFetcher>
       </body>
     </html>
   );
