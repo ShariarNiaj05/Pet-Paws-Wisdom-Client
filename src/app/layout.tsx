@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "./lib/providers";
-import { UserProvider } from "./providers/UserProvider";
 
 export const metadata: Metadata = {
   title: "Pet Paws Wisdom",
