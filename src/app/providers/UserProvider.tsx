@@ -1,3 +1,4 @@
+"use server";
 import React, { createContext, useContext } from "react";
 import { headers } from "next/headers";
 
@@ -8,7 +9,11 @@ interface UserContextType {
 
 const UserContext = createContext<UserContextType | null>(null);
 
-export function UserProvider({ children }: { children: React.ReactNode }) {
+export async function UserProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const headersList = headers();
   const role = headersList.get("X-User-Role") || "";
   const userId = headersList.get("X-User-Id") || "";
