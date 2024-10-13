@@ -1,4 +1,3 @@
-"use server";
 import React, { createContext, useContext } from "react";
 import { headers } from "next/headers";
 
