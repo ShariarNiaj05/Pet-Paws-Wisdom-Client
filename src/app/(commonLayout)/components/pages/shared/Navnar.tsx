@@ -17,7 +17,8 @@ export default function NavBar() {
   console.log("user from navbar", user);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
-    admin: "/dashboard/admin",
+    // admin: "/dashboard/admin",
+    admin: "/admin-dashboard",
   };
   // if (!user) return <p>Loading...</p>;
   return (
