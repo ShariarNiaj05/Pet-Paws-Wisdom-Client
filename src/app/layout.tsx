@@ -17,13 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <UserInfoFetcher>
-          {(role, userId) => (
-            <UserInfoClient role={role} userId={userId}>
-              {children}
-            </UserInfoClient>
-          )}
-        </UserInfoFetcher>
+        <UserInfoFetcher>{children}</UserInfoFetcher>
       </body>
     </html>
   );
