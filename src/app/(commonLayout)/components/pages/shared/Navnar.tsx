@@ -8,13 +8,12 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import { useContext } from "react";
-import { UserContext } from "@/context/UserContext";
+import { useUser } from "@/app/providers/UserProvider";
 
 export default function NavBar() {
-  const { user } = useContext(UserContext);
+  const { role, userId } = useUser();
 
-  console.log("user from navbar", user);
+  console.log("user from navbar", role);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
     // admin: "/dashboard/admin",
@@ -41,6 +40,7 @@ export default function NavBar() {
         </NavbarItem> */}
         <NavbarItem>
           {user && <Link href={routeMap[user?.role]}>Dashboard</Link>}
+          {/* {user && <Link href={routeMap[user?.role]}>Dashboard</Link>} */}
           {/* <Link href={routeMap.user}>Dashboard</Link> */}
         </NavbarItem>
       </NavbarContent>
