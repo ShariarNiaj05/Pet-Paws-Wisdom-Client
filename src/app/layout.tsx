@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { UserInfoClient } from "./(commonLayout)/components/pages/shared/UserInfoClient";
 import { UserInfoFetcher } from "./(commonLayout)/components/pages/shared/UserInfoFetcher";
 
 export const metadata: Metadata = {
