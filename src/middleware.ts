@@ -24,6 +24,8 @@ export async function middleware(request: NextRequest) {
   let decodedToken = null;
   decodedToken = decode(accessToken) as any;
   const response = NextResponse.next();
+
+  console.log("decodedToken from middleware", decodedToken);
   response.cookies.set("userRole", decodedToken.role);
   response.cookies.set("userInfo", JSON.stringify(decodedToken));
   const { role } = decodedToken;
