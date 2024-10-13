@@ -25,7 +25,7 @@ export async function UserProvider({
   );
 }
 
-export function useUser() {
+export async function useUser() {
   const context = useContext(UserContext);
   if (!context) {
     throw new Error("useUser must be used within a UserProvider");
