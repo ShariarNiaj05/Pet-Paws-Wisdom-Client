@@ -24,7 +24,7 @@ export async function middleware(request: NextRequest) {
   let decodedToken = null;
   decodedToken = decode(accessToken) as any;
   const response = NextResponse.next();
-  const { role, _id: userId } = decodedToken;
+  const { role } = decodedToken;
   console.log("decodedToken from middleware", decodedToken);
   console.log("accessToken from middleware", accessToken);
 
