@@ -13,6 +13,7 @@ interface UserContextType {
 const UserContext = createContext<UserContextType | null>(null);
 
 export function UserInfoClient({
+  email,
   role,
   _id,
   children,
@@ -23,9 +24,7 @@ export function UserInfoClient({
     _id,
   };
   return (
-    <UserContext.Provider value={{ role, _id }}>
-      {children}
-    </UserContext.Provider>
+    <UserContext.Provider value={userInfo}>{children}</UserContext.Provider>
   );
 }
 
