@@ -11,10 +11,9 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { useUser } from "./UserInfoClient";
 
 export default function NavBar() {
-  const { role, userId } = useUser();
+  const { role } = useUser();
 
   console.log("user from navbar", role);
-  console.log("userId from navbar", userId);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
     // admin: "/dashboard/admin",
