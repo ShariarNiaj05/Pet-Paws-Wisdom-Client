@@ -7,7 +7,6 @@ import { Button, Input, Card } from "@nextui-org/react";
 import nexiosInstance from "@/config/nexios.config";
 import { redirect } from "next/navigation";
 import { decode } from "@/helpers/jwtHelpers";
-import { JwtPayload } from "jsonwebtoken";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
