@@ -31,9 +31,6 @@ export async function middleware(request: NextRequest) {
   response.cookies.set("userRole", decodedToken.role);
   response.cookies.set("userInfo", JSON.stringify(decodedToken));
 
-  // Save token in localStorage
-  localStorage.setItem("userInfo", decode(accessToken) as unknown as string);
-
   // Add user info to headers
   // response.headers.set("X-User-Role", role);
   // response.headers.set("X-User-Id", userId);

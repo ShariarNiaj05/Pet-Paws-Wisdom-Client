@@ -3,19 +3,27 @@
 import React, { createContext, useContext } from "react";
 
 interface UserContextType {
+  email: string;
   role: string;
-  userId: string;
+  _id: string;
+  exp?: Date;
+  iat?: Date;
 }
 
 const UserContext = createContext<UserContextType | null>(null);
 
 export function UserInfoClient({
   role,
-  userId,
+  _id,
   children,
 }: UserContextType & { children: React.ReactNode }) {
+  const userInfo = {
+    email,
+    role,
+    _id,
+  };
   return (
-    <UserContext.Provider value={{ role, userId }}>
+    <UserContext.Provider value={{ role, _id }}>
       {children}
     </UserContext.Provider>
   );
