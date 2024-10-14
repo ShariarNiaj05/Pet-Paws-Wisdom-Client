@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import NavBar from "./components/pages/shared/Navnar";
 import Footer from "./components/pages/shared/Footer";
+import NavBar from "./components/pages/shared/Navbar";
 
 export const metadata: Metadata = {
   title: "Pet Paws Wisdom",
