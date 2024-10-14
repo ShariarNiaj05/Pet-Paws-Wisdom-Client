@@ -6,6 +6,8 @@ import { useState } from "react";
 import { Button, Input, Card } from "@nextui-org/react";
 import nexiosInstance from "@/config/nexios.config";
 import { redirect } from "next/navigation";
+import { decode } from "@/helpers/jwtHelpers";
+import { JwtPayload } from "jsonwebtoken";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -24,7 +26,7 @@ const LoginForm = () => {
       const { token } = response.data;
 
       // Save token in localStorage
-      localStorage.setItem("token", token);
+      localStorage.setItem("userInfo", decode(token) as unknown as string);
 
       // Redirect to dashboard after successful login
       redirect("/dashboard");
