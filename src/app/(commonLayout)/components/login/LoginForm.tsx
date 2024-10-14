@@ -24,11 +24,11 @@ const LoginForm = () => {
       });
       console.log("response", response);
       const { token } = response.data;
-      console.log("decoded token", decode(JSON.stringify(token)));
+      // console.log("decoded token", decode(JSON.stringify(token)));
       // Save token in localStorage
       localStorage.setItem(
         "userInfo",
-        decode(JSON.stringify(token)) as unknown as string
+        decode(JSON.parse(token)) as unknown as string
       );
 
       // Redirect to dashboard after successful login
