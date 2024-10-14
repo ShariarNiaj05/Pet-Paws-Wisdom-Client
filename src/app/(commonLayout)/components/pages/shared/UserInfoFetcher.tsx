@@ -18,9 +18,9 @@ export function UserInfoFetcher({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  if (!userInfo) {
+  /* if (!userInfo) {
     return <p>Loading...</p>;
-  }
+  } */
 
   const { email, role, _id } = userInfo;
 
