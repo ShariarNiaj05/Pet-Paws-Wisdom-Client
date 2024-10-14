@@ -25,8 +25,8 @@ const LoginForm = () => {
       console.log("response", response);
       const { token } = response.data;
 
-      // Save token in localStorage
-      localStorage.setItem("userInfo", decode(token) as unknown as string);
+      // // Save token in localStorage
+      // localStorage.setItem("userInfo", decode(token) as unknown as string);
 
       // Redirect to dashboard after successful login
       redirect("/dashboard");

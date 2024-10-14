@@ -26,11 +26,11 @@ export async function middleware(request: NextRequest) {
   const response = NextResponse.next();
   const { role, _id: userId } = decodedToken;
   console.log("decodedToken from middleware", decodedToken);
-  // response.cookies.set("userRole", decodedToken.role);
-  // response.cookies.set("userInfo", JSON.stringify(decodedToken));
+  response.cookies.set("userRole", decodedToken.role);
+  response.cookies.set("userInfo", JSON.stringify(decodedToken));
   // Add user info to headers
-  response.headers.set("X-User-Role", role);
-  response.headers.set("X-User-Id", userId);
+  // response.headers.set("X-User-Role", role);
+  // response.headers.set("X-User-Id", userId);
 
   // const { role } = decodedToken;
 
