@@ -1,4 +1,4 @@
-export type TUser = {
+export type IUser = {
   email: string;
   exp?: Date;
   iat?: Date;
