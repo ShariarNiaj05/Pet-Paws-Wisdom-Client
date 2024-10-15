@@ -44,7 +44,7 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
 
 export const useUser = () => {
   const context = useContext(UserContext);
-  const router = useRouter();
+  //   const router = useRouter();
   /*  if (context === undefined) {
     router.push("/");
   }
