@@ -8,3 +8,5 @@ interface IUserProviderValues {
   setUser: (user: IUser | null) => void;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
+
+const UserProvider = ({ children }: { children: ReactNode }) => {};
