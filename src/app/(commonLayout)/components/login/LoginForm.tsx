@@ -26,7 +26,7 @@ const LoginForm = () => {
         email,
         password,
       }); */
-      const response = loginUser(payload);
+      const response = await loginUser(payload);
       console.log("response", response);
       const { token } = response.data;
       console.log("decoded token", JSON.stringify(decode(token)));
