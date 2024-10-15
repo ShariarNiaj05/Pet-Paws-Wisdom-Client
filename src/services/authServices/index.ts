@@ -4,7 +4,7 @@
 import nexiosInstance from "@/config/nexios.config";
 import { cookies } from "next/headers";
 
-export const loginUser = async (userData) => {
+export const loginUser = async (userData: any) => {
   try {
     const { data } = await nexiosInstance.post("/auth/login", userData);
     if (!data) {
