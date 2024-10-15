@@ -2,10 +2,9 @@
 "use server";
 
 import nexiosInstance from "@/config/nexios.config";
-import { TUser } from "@/types/user.type";
 import { cookies } from "next/headers";
 
-export const loginUser = async (userData: TUser) => {
+export const loginUser = async (userData) => {
   try {
     const { data } = await nexiosInstance.post("/auth/login", userData);
     if (!data) {

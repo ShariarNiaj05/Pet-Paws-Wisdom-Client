@@ -7,6 +7,7 @@ import { Button, Input, Card } from "@nextui-org/react";
 import nexiosInstance from "@/config/nexios.config";
 import { redirect } from "next/navigation";
 import { decode } from "@/helpers/jwtHelpers";
+import { loginUser } from "@/services/authServices";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -20,11 +21,12 @@ const LoginForm = () => {
       email,
       password,
     };
-    try {
+    /* try {
       const response: any = await nexiosInstance.post("/auth/login", {
         email,
         password,
-      });
+      }); */
+    const response = loginUser(payload)
       console.log("response", response);
       const { token } = response.data;
       console.log("decoded token", JSON.stringify(decode(token)));
