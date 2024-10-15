@@ -4,6 +4,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { decode } from "./helpers/jwtHelpers";
 
 const authRoutes = ["/login", "/register"];
+const roleBasedRoutes = {
+  USER: [/^\/dashboard/],
+  ADMIN: [/^\/admin-dashboard/],
+};
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const accessToken = cookies().get("accessToken")?.value;
