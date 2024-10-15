@@ -35,7 +35,7 @@ export async function middleware(request: NextRequest) {
     }
   }
   // role based authorization
-  let decodedToken = null;
+  /* let decodedToken = null;
   decodedToken = decode(accessToken) as any;
   const response = NextResponse.next();
   const { role } = decodedToken;
@@ -43,7 +43,7 @@ export async function middleware(request: NextRequest) {
   console.log("accessToken from middleware", accessToken);
 
   response.cookies.set("userRole", decodedToken.role);
-  response.cookies.set("userInfo", JSON.stringify(decodedToken));
+  response.cookies.set("userInfo", JSON.stringify(decodedToken)); */
 
   // Add user info to headers
   // response.headers.set("X-User-Role", role);
@@ -51,7 +51,7 @@ export async function middleware(request: NextRequest) {
 
   // const { role } = decodedToken;
 
-  if (role === "admin" && pathname.match(/^\/admin-dashboard/)) {
+  /*   if (role === "admin" && pathname.match(/^\/admin-dashboard/)) {
     return NextResponse.next();
   }
   if (role === "user" && pathname.match(/^\/dashboard/)) {
@@ -59,7 +59,7 @@ export async function middleware(request: NextRequest) {
   }
   if (role === "user" && pathname === "/profile") {
     return NextResponse.next();
-  }
+  } */
   return NextResponse.redirect(new URL("/", request.url));
 }
 
