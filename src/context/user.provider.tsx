@@ -5,6 +5,7 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useContext,
   useEffect,
   useState,
 } from "react";
@@ -38,3 +39,15 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
     </UserContext.Provider>
   );
 };
+
+export const useUser = () => {
+  const context = useContext(UserContext);
+
+  if (context === undefined) {
+    throw new Error("useUser must be used within the UserProvider context");
+  }
+
+  return context;
+};
+
+export default UserProvider;
