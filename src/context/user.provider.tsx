@@ -32,7 +32,7 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     handleUser();
-  }, [isLoading]);
+  }, [user, isLoading]);
 
   return (
     <UserContext.Provider value={{ user, setUser, isLoading, setIsLoading }}>
@@ -44,10 +44,10 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
 export const useUser = () => {
   const context = useContext(UserContext);
   const router = useRouter();
-  if (context === undefined) {
-    router.push("/dashboard");
+  /*  if (context === undefined) {
+    router.push("/");
   }
-
+ */
   return context;
 };
 

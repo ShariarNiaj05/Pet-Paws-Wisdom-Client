@@ -11,8 +11,12 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { useUser } from "@/context/user.provider";
 
 export default function NavBar() {
-  const { user } = useUser();
-  console.log("user from navbar", user);
+  let user = null;
+  const userInfo = useUser();
+  if (userInfo) {
+    user = userInfo.user;
+  }
+  console.log("user from navbar", userInfo);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
     admin: "/admin-dashboard",
