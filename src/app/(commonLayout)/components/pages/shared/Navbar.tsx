@@ -10,7 +10,6 @@ import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export default function NavBar() {
-  // const { role } = useUser();
   const role = "user";
   console.log("user from navbar", role);
   const routeMap: Record<string, string> = {
