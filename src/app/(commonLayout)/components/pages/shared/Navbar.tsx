@@ -8,7 +8,6 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import { useUser } from "./UserInfoClient";
 
 export default function NavBar() {
   // const { role } = useUser();
