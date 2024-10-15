@@ -1,6 +1,6 @@
 import { getCurrentUser } from "@/services/authServices";
 import { IUser } from "@/types/user.type";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import {
   createContext,
   Dispatch,
