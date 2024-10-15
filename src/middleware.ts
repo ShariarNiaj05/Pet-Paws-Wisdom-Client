@@ -2,6 +2,7 @@
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { decode } from "./helpers/jwtHelpers";
+import { getCurrentUser } from "./services/authServices";
 
 const authRoutes = ["/login", "/register"];
 const roleBasedRoutes = {
