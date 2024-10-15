@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { UserInfoFetcher } from "./(commonLayout)/components/pages/shared/UserInfoFetcher";
 
 export const metadata: Metadata = {
   title: "Pet Paws Wisdom",
@@ -15,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
-        <UserInfoFetcher>{children}</UserInfoFetcher>
-      </body>
+      <body className={`antialiased`}>{children}</body>
     </html>
   );
 }
