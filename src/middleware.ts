@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
-import { decode } from "./helpers/jwtHelpers";
 import { getCurrentUser } from "./services/authServices";
 
 const AuthRoutes = ["/login", "/register"];
