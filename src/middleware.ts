@@ -24,6 +24,8 @@ export async function middleware(request: NextRequest) {
       );
     }
   } */
+  const user = await getCurrentUser();
+
   // role based authorization
   let decodedToken = null;
   decodedToken = decode(accessToken) as any;
