@@ -4,9 +4,11 @@ import { decode } from "./helpers/jwtHelpers";
 import { getCurrentUser } from "./services/authServices";
 
 const AuthRoutes = ["/login", "/register"];
+type Role = keyof typeof roleBasedRoutes;
+
 const roleBasedRoutes = {
-  USER: [/^\/dashboard/],
-  ADMIN: [/^\/admin-dashboard/],
+  user: [/^\/dashboard/],
+  admin: [/^\/admin-dashboard/],
 };
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -32,6 +34,14 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(
         new URL(`/login?redirect=${pathname}`, request.url)
       );
+    }
+  }
+
+  if (user?.role && roleBasedRoutes[user?.role as Role]) {
+    const routes = roleBasedRoutes[user?.role as Role];
+
+    if (routes.some((route) => pathname.match(route))) {
+      return NextResponse.next();
     }
   }
   // role based authorization
