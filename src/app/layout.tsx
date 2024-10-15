@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import UserProvider from "@/context/user.provider";
 
 export const metadata: Metadata = {
   title: "Pet Paws Wisdom",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        {" "}
+        <UserProvider>{children}</UserProvider>
+      </body>
     </html>
   );
 }

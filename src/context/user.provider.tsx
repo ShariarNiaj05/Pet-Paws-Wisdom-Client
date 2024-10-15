@@ -1,3 +1,4 @@
+"use client";
 import { getCurrentUser } from "@/services/authServices";
 import { IUser } from "@/types/user.type";
 import { useRouter } from "next/navigation";
