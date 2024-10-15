@@ -38,7 +38,7 @@ export default function NavBar() {
           </Link>
         </NavbarItem> */}
         <NavbarItem>
-          {role && <Link href={routeMap[role]}>Dashboard</Link>}
+          {user && <Link href={routeMap[user?.role]}>Dashboard</Link>}
           {/* {user && <Link href={routeMap[user?.role]}>Dashboard</Link>} */}
           {/* <Link href={routeMap.user}>Dashboard</Link> */}
         </NavbarItem>
@@ -48,7 +48,7 @@ export default function NavBar() {
           <ThemeSwitcher />
         </NavbarItem>
 
-        {role ? (
+        {user ? (
           <NavbarItem>
             <Button color="primary" variant="flat">
               Logout
