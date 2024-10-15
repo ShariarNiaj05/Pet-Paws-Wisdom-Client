@@ -21,12 +21,12 @@ const LoginForm = () => {
       email,
       password,
     };
-    /* try {
-      const response: any = await nexiosInstance.post("/auth/login", {
+    try {
+      /* const response: any = await nexiosInstance.post("/auth/login", {
         email,
         password,
       }); */
-    const response = loginUser(payload)
+      const response = loginUser(payload);
       console.log("response", response);
       const { token } = response.data;
       console.log("decoded token", JSON.stringify(decode(token)));
