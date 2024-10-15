@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { decode } from "./helpers/jwtHelpers";
 import { getCurrentUser } from "./services/authServices";
 
-const authRoutes = ["/login", "/register"];
+const AuthRoutes = ["/login", "/register"];
 const roleBasedRoutes = {
   USER: [/^\/dashboard/],
   ADMIN: [/^\/admin-dashboard/],
@@ -26,7 +26,15 @@ export async function middleware(request: NextRequest) {
     }
   } */
   const user = await getCurrentUser();
-
+  if (!user) {
+    if (AuthRoutes.includes(pathname)) {
+      return NextResponse.next();
+    } else {
+      return NextResponse.redirect(
+        new URL(`/login?redirect=${pathname}`, request.url)
+      );
+    }
+  }
   // role based authorization
   let decodedToken = null;
   decodedToken = decode(accessToken) as any;
