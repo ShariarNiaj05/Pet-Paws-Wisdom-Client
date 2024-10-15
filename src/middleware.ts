@@ -10,8 +10,8 @@ const roleBasedRoutes = {
 };
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const accessToken = cookies().get("accessToken")?.value;
-  if (!accessToken) {
+  // const accessToken = cookies().get("accessToken")?.value;
+  /* if (!accessToken) {
     if (authRoutes.includes(pathname)) {
       return NextResponse.next();
     } else {
@@ -23,7 +23,7 @@ export async function middleware(request: NextRequest) {
         )
       );
     }
-  }
+  } */
   // role based authorization
   let decodedToken = null;
   decodedToken = decode(accessToken) as any;
