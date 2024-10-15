@@ -8,10 +8,11 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { useUser } from "@/context/user.provider";
 
 export default function NavBar() {
-  const role = "user";
-  console.log("user from navbar", role);
+  const { user } = useUser();
+  console.log("user from navbar", user);
   const routeMap: Record<string, string> = {
     user: "/dashboard",
     // admin: "/dashboard/admin",
