@@ -1,5 +1,6 @@
 import { getCurrentUser } from "@/services/authServices";
 import { IUser } from "@/types/user.type";
+import { redirect, useRouter } from "next/navigation";
 import {
   createContext,
   Dispatch,
@@ -42,9 +43,9 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
 
 export const useUser = () => {
   const context = useContext(UserContext);
-
+  const router = useRouter();
   if (context === undefined) {
-    throw new Error("useUser must be used within the UserProvider context");
+    router.push("/dashboard");
   }
 
   return context;
