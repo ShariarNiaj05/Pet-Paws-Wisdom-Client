@@ -11,7 +11,7 @@ export const loginUser = async (userData: TUser) => {
     if (!data) {
       throw new Error("Nothing found");
     }
-
+    console.log("user data in auth service file", data);
     if (data.success) {
       cookies().set("accessToken", data?.data?.accessToken);
       cookies().set("refreshToken", data?.data?.refreshToken);
