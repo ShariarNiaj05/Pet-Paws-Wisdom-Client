@@ -1,5 +1,12 @@
 import { IUser } from "@/types/user.type";
-import { createContext, Dispatch, ReactNode, SetStateAction } from "react";
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 
 const UserContext = createContext<IUserProviderValues | undefined>(undefined);
 interface IUserProviderValues {
@@ -9,4 +16,17 @@ interface IUserProviderValues {
   setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
 
-const UserProvider = ({ children }: { children: ReactNode }) => {};
+const UserProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<IUser | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    handleUser();
+  }, [isLoading]);
+
+  return (
+    <UserContext.Provider value={{ user, setUser, isLoading, setIsLoading }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
