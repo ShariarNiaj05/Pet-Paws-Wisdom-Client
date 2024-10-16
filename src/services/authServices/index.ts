@@ -5,16 +5,6 @@ import nexiosInstance from "@/config/nexios.config";
 import { jwtDecode } from "jwt-decode";
 import { cookies } from "next/headers";
 
-interface AuthResponse {
-  success: boolean;
-  // status: number;
-  token?: string;
-  message: string;
-  data: {
-    accessToken: string;
-    refreshToken: string;
-  };
-}
 export const registerUser = async (userData: any) => {
   try {
     const { data } = await nexiosInstance.post("/auth/register", userData);
