@@ -23,7 +23,6 @@ export const AdminSidebarWrapper = () => {
         <div className={Sidebar.Header()}>
           {" "}
           <Link className="flex" href="/">
-            <Cog />
             <p className="font-bold text-inherit px-4">Pet Paws Wisdom</p>
           </Link>
         </div>
