@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-// import { useRouter } from "next/router";
 import { useState } from "react";
 import { Button, Input, Card } from "@nextui-org/react";
 import nexiosInstance from "@/config/nexios.config";
