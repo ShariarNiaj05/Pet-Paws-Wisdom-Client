@@ -7,7 +7,6 @@ import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { CollapseItems } from "./collapse-items";
 import { useSidebarContext } from "../../layout/layout-context";
-import { UserDropdown } from "../dashboardNavbar/user-dropdown";
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -72,12 +71,11 @@ export const SidebarWrapper = () => {
             </SidebarMenu>
 
             <SidebarMenu title="Updates">
-              {/*  <SidebarItem
+              <SidebarItem
                 isActive={pathname === "/changelog"}
                 title="Changelog"
                 icon={<Home />}
-              /> */}
-              <UserDropdown />
+              />
             </SidebarMenu>
           </div>
         </div>
