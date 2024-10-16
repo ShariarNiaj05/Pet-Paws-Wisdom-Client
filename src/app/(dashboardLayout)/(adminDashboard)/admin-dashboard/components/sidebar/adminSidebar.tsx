@@ -7,7 +7,6 @@ import { Car, Cat, Home, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSidebarContext } from "@/app/(dashboardLayout)/layout/layout-context";
-import { UserDropdown } from "@/app/(dashboardLayout)/components/dashboardNavbar/user-dropdown";
 
 export const AdminSidebarWrapper = () => {
   const pathname = usePathname();
@@ -92,12 +91,11 @@ export const AdminSidebarWrapper = () => {
             </SidebarMenu>
 
             <SidebarMenu title="Updates">
-              {/* <SidebarItem
+              <SidebarItem
                 isActive={pathname === "/changelog"}
                 title="Changelog"
                 icon={<Home />}
-              /> */}
-              <UserDropdown />
+              />
             </SidebarMenu>
           </div>
           <div className={Sidebar.Footer()}>
