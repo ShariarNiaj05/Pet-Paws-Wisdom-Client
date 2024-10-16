@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 
 interface AuthResponse {
   success: boolean;
-  status: number;
+  // status: number;
   token?: string;
   message: string;
   data: {
@@ -17,10 +17,7 @@ interface AuthResponse {
 }
 export const registerUser = async (userData: any) => {
   try {
-    const { data } = await nexiosInstance.post<AuthResponse>(
-      "/auth/register",
-      userData
-    );
+    const { data } = await nexiosInstance.post("/auth/register", userData);
 
     if (data.success) {
       cookies().set("accessToken", data?.data?.accessToken);
