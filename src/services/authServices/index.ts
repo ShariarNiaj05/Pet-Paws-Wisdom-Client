@@ -5,9 +5,22 @@ import nexiosInstance from "@/config/nexios.config";
 import { jwtDecode } from "jwt-decode";
 import { cookies } from "next/headers";
 
+interface AuthResponse {
+  success: boolean;
+  status: number;
+  token?: string;
+  message: string;
+  data: {
+    accessToken: string;
+    refreshToken: string;
+  };
+}
 export const registerUser = async (userData: any) => {
   try {
-    const { data } = await nexiosInstance.post("/auth/register", userData);
+    const { data } = await nexiosInstance.post<AuthResponse>(
+      "/auth/register",
+      userData
+    );
 
     if (data.success) {
       cookies().set("accessToken", data?.data?.accessToken);
@@ -23,6 +36,7 @@ export const registerUser = async (userData: any) => {
 export const loginUser = async (userData: any) => {
   try {
     const { data } = await nexiosInstance.post("/auth/login", userData);
+    console.log("login user info", data);
     if (!data) {
       throw new Error("Nothing found");
     }
