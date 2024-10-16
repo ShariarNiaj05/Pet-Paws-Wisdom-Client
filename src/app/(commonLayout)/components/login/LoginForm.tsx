@@ -27,13 +27,13 @@ const LoginForm = () => {
       }); */
       const response = await loginUser(payload);
       console.log("response", response);
-      const { token } = response.data;
-      console.log("decoded token", JSON.stringify(decode(token)));
+      // const { token } = response.data;
+      // console.log("decoded token", JSON.stringify(decode(token)));
       // Save token in localStorage
-      localStorage.setItem(
-        "userInfo",
-        JSON.stringify(decode(token)) as unknown as string
-      );
+      // localStorage.setItem(
+      //   "userInfo",
+      //   JSON.stringify(decode(token)) as unknown as string
+      // );
 
       // Redirect to dashboard after successful login
       redirect("/dashboard");
