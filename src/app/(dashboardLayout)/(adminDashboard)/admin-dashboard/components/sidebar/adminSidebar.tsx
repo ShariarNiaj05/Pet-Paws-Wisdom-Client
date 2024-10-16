@@ -3,7 +3,7 @@ import { CollapseItems } from "./collapse-items";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { Sidebar } from "./sidebar.styles";
-import { Car, Cog, Home, User } from "lucide-react";
+import { Car, Cat, Home, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSidebarContext } from "@/app/(dashboardLayout)/layout/layout-context";
@@ -23,6 +23,7 @@ export const AdminSidebarWrapper = () => {
         <div className={Sidebar.Header()}>
           {" "}
           <Link className="flex" href="/">
+            <Cat />
             <p className="font-bold text-inherit px-4">Pet Paws Wisdom</p>
           </Link>
         </div>
