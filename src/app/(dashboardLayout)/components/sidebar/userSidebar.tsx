@@ -1,4 +1,4 @@
-import { Car, Cog, DollarSign, History, Home } from "lucide-react";
+import { Car, Cat, DollarSign, History, Home } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -23,7 +23,7 @@ export const SidebarWrapper = () => {
         <div className={Sidebar.Header()}>
           {" "}
           <Link className="flex" href="/">
-            <Cog />
+            <Cat />
             <p className="font-bold text-inherit px-4">Pet Paws Wisdom</p>
           </Link>
         </div>
