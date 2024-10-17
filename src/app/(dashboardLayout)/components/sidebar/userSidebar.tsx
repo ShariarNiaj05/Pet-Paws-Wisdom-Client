@@ -43,26 +43,26 @@ export const SidebarWrapper = () => {
                 icon={<Car />}
                 href="/dashboard/rent-car"
               />
-              <SidebarItem
+              {/* <SidebarItem
                 isActive={pathname === "/dashboard/payments"}
                 title="Payments"
                 icon={<DollarSign />}
-              />
+              /> */}
               <CollapseItems
                 icon={<History />}
                 items={["Banks Accounts", "Credit Cards", "Loans"]}
                 title="Rent history"
               />
-              <SidebarItem
+              {/* <SidebarItem
                 isActive={pathname === "/customers"}
                 title="Customers"
                 icon={<Home />}
-              />
-              <SidebarItem
+              /> */}
+              {/* <SidebarItem
                 isActive={pathname === "/products"}
                 title="Products"
                 icon={<Home />}
-              />
+              /> */}
               {/* <SidebarItem
                 isActive={pathname === "/reports"}
                 title="Reports"
