@@ -26,7 +26,7 @@ export const NavbarWrapper = ({ children }: Props) => {
             <Menu onClick={setCollapsed}></Menu>
           )}
         </NavbarContent>
-        <NavbarContent className="w-full max-md:hidden">
+        {/* <NavbarContent className="w-full max-md:hidden">
           <Input
             startContent={<SearchCheck />}
             isClearable
@@ -37,7 +37,7 @@ export const NavbarWrapper = ({ children }: Props) => {
             }}
             placeholder="Search..."
           />
-        </NavbarContent>
+        </NavbarContent> */}
         <NavbarContent
           justify="end"
           className="w-fit data-[justify=end]:flex-grow-0"
