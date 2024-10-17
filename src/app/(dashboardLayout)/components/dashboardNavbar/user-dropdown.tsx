@@ -1,4 +1,5 @@
 import { ThemeSwitcher } from "@/app/(commonLayout)/components/pages/shared/ThemeSwitcher";
+import { useUser } from "@/context/user.provider";
 import {
   Avatar,
   Dropdown,
@@ -9,6 +10,7 @@ import {
 } from "@nextui-org/react";
 
 export const UserDropdown = () => {
+  const user = useUser();
   return (
     <Dropdown>
       <NavbarItem>
@@ -30,7 +32,7 @@ export const UserDropdown = () => {
           className="flex flex-col justify-start w-full items-start"
         >
           <p>Signed in as</p>
-          {/* <p>{user?.email}</p> */}
+          <p>{user?.user?.email}</p>
         </DropdownItem>
         {/* <DropdownItem key="settings">My Settings</DropdownItem> */}
         {/* <DropdownItem key="team_settings">Team Settings</DropdownItem> */}
