@@ -13,7 +13,7 @@ export const CollapseItems = ({ icon, items, title }: Props) => {
     <div className="flex gap-4 h-full items-center cursor-pointer">
       <Accordion className="px-0">
         <AccordionItem
-          indicator={<Upload />}
+          indicator={<Upload color="white" />}
           classNames={{
             indicator: "data-[open=true]:-rotate-180",
             trigger:
