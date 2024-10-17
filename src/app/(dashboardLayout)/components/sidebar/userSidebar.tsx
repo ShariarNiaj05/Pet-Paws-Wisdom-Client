@@ -20,13 +20,13 @@ export const SidebarWrapper = () => {
           collapsed: collapsed,
         })}
       >
-        <div className={Sidebar.Header()}>
+        {/* <div className={Sidebar.Header()}>
           {" "}
           <Link className="flex" href="/">
             <Cat />
             <p className="font-bold text-inherit px-4">Pet Paws Wisdom</p>
           </Link>
-        </div>
+        </div> */}
 
         <div className="flex flex-col justify-between h-full">
           <div className={Sidebar.Body()}>
