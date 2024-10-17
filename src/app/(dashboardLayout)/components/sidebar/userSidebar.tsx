@@ -7,14 +7,14 @@ import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { CollapseItems } from "./collapse-items";
 import { useSidebarContext } from "../../layout/layout-context";
-import { UserDropdown } from "../../(adminDashboard)/admin-dashboard/components/dashboardNabbar/user-dropdown";
+// import { UserDropdown } from "../../(adminDashboard)/admin-dashboard/components/dashboardNabbar/user-dropdown";
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
   const { collapsed } = useSidebarContext();
 
   return (
-    <aside className="h-screen z-[20] sticky top-0">
+    <aside className="h-screen z-[20] sticky top-0 bg-primary">
       {collapsed ? <div className={Sidebar.Overlay()} /> : null}
       <div
         className={Sidebar({
