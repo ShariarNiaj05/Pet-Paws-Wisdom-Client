@@ -39,9 +39,9 @@ export const SidebarWrapper = () => {
             <SidebarMenu title="Main Menu">
               <SidebarItem
                 isActive={pathname === "/dashboard/rent-car"}
-                title="rent-car"
+                title="New Post"
                 icon={<Car />}
-                href="/dashboard/rent-car"
+                href="/dashboard/new-post"
               />
               {/* <SidebarItem
                 isActive={pathname === "/dashboard/payments"}
