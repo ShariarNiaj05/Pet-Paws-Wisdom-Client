@@ -53,21 +53,6 @@ export const SidebarWrapper = () => {
                 items={["Banks Accounts", "Credit Cards", "Loans"]}
                 title="Rent history"
               />
-              {/* <SidebarItem
-                isActive={pathname === "/customers"}
-                title="Customers"
-                icon={<Home />}
-              /> */}
-              {/* <SidebarItem
-                isActive={pathname === "/products"}
-                title="Products"
-                icon={<Home />}
-              /> */}
-              {/* <SidebarItem
-                isActive={pathname === "/reports"}
-                title="Reports"
-                icon={<Home />}
-              /> */}
             </SidebarMenu>
 
             {/* <SidebarMenu title="Updates">
