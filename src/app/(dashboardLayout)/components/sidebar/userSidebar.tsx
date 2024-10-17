@@ -70,13 +70,13 @@ export const SidebarWrapper = () => {
               />
             </SidebarMenu>
 
-            <SidebarMenu title="Updates">
+            {/* <SidebarMenu title="Updates">
               <SidebarItem
                 isActive={pathname === "/changelog"}
                 title="Changelog"
                 icon={<Home />}
               />
-            </SidebarMenu>
+            </SidebarMenu> */}
           </div>
         </div>
       </div>
