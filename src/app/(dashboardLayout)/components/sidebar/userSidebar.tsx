@@ -43,11 +43,7 @@ export const SidebarWrapper = () => {
                 icon={<ScrollText />}
                 href="/dashboard/new-post"
               />
-              {/* <SidebarItem
-                isActive={pathname === "/dashboard/payments"}
-                title="Payments"
-                icon={<DollarSign />}
-              /> */}
+
               <CollapseItems
                 icon={<History />}
                 items={["Banks Accounts", "Credit Cards", "Loans"]}
