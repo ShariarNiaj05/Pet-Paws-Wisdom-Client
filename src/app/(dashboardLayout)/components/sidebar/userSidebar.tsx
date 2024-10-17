@@ -1,4 +1,4 @@
-import { Car, Cat, DollarSign, History, Home } from "lucide-react";
+import { Car, History, Home } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
