@@ -1,4 +1,4 @@
-import { Car, History, Home } from "lucide-react";
+import { ScrollText, History, Home } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -40,7 +40,7 @@ export const SidebarWrapper = () => {
               <SidebarItem
                 isActive={pathname === "/dashboard/rent-car"}
                 title="New Post"
-                icon={<Car />}
+                icon={<ScrollText />}
                 href="/dashboard/new-post"
               />
               {/* <SidebarItem
