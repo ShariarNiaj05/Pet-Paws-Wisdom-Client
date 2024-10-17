@@ -7,7 +7,6 @@ import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { CollapseItems } from "./collapse-items";
 import { useSidebarContext } from "../../layout/layout-context";
-// import { UserDropdown } from "../../(adminDashboard)/admin-dashboard/components/dashboardNabbar/user-dropdown";
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -77,7 +76,6 @@ export const SidebarWrapper = () => {
                 title="Changelog"
                 icon={<Home />}
               />
-              {/* <UserDropdown /> */}
             </SidebarMenu>
           </div>
         </div>
