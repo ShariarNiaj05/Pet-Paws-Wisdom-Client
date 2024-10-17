@@ -5,10 +5,10 @@ const BannerButton = () => {
   return (
     <div className="space-x-4">
       <Button onClick={() => console.log("Hello")} color="primary" radius="sm">
-        Book Now
+        See Stories
       </Button>
       <Button color="primary" variant="bordered" radius="sm">
-        Learn More
+        Share Stories
       </Button>
     </div>
   );
