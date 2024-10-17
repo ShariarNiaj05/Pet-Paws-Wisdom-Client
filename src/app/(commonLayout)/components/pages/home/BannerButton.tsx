@@ -10,6 +10,11 @@ const BannerButton = () => {
       <Button onClick={() => console.log("Hello")} color="primary" radius="sm">
         <Link href={"/"}>See Stories</Link>
       </Button>
+      {user?.email && (
+        <Button color="primary" variant="bordered" radius="sm">
+          <Link href={"/dashboard/new-post"}>Share Stories</Link>
+        </Button>
+      )}
     </div>
   );
 };
