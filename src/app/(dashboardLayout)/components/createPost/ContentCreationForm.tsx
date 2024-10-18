@@ -4,6 +4,7 @@ import { Button, Input, Switch, Select, SelectItem } from "@nextui-org/react";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
 import { createContentApi } from "@/services/contentServices";
+import { useUser } from "@/context/user.provider";
 
 const QuillNoSSRWrapper = dynamic(
   () => import("react-quill").then((mod) => mod.default),
@@ -35,6 +36,7 @@ const formats = [
   "image",
 ];
 const ContentCreationForm = () => {
+  const user = useUser();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [category, setCategory] = useState("");
@@ -45,9 +47,10 @@ const ContentCreationForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log(body);
     const payload = {
       title,
-      body,
+      body: JSON.stringify(body),
       category,
       tags: tags.split(","),
       isPremium,
