@@ -83,6 +83,7 @@ const ContentCreationForm = () => {
   };
   console.log(category);
   const handleCategoryChange = async () => {
+    console.log("clicked");
     let categoryId;
     if (Array.isArray(allCategory)) {
       for (let i = 0; i < allCategory.length; i++) {
