@@ -1,39 +1,40 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 
 const PostEditor = ({ onContentChange }) => {
   const editorRef = useRef<HTMLDivElement>(null);
   let quillInstance: Quill | null = null;
+  const [quillInstance, setQuillInstance] = useState<any>(null);
 
   useEffect(() => {
-    if (editorRef.current) {
-      quillInstance = new Quill(editorRef.current, {
-        theme: "snow",
-        modules: {
-          toolbar: [
-            [{ header: [1, 2, false] }],
-            ["bold", "italic", "underline", "strike"],
-            ["blockquote", "code-block"],
-            [{ list: "ordered" }, { list: "bullet" }],
-            ["link", "image"],
-            ["clean"],
-          ],
-        },
-        placeholder: "Write your pet story or tip here...",
-      });
+    if (typeof window !== "undefined") {
+      // Import Quill dynamically to avoid SSR issues
+      import("quill").then((Quill) => {
+        if (editorRef.current) {
+          const quill = new Quill(editorRef.current, {
+            theme: "snow",
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ["bold", "italic", "underline", "strike"],
+                ["blockquote", "code-block"],
+                [{ list: "ordered" }, { list: "bullet" }],
+                ["link", "image"],
+                ["clean"],
+              ],
+            },
+            placeholder: "Write your pet story or tip here...",
+          });
+          setQuillInstance(quill);
 
-      quillInstance.on("text-change", () => {
-        onContentChange(quillInstance!.root.innerHTML);
+          quill.on("text-change", () => {
+            onContentChange(quill.root.innerHTML);
+          });
+        }
       });
     }
-
-    return () => {
-      if (quillInstance) {
-        quillInstance = null;
-      }
-    };
   }, [onContentChange]);
 
   useEffect(() => {
