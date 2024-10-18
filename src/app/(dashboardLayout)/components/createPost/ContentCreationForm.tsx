@@ -83,18 +83,16 @@ const ContentCreationForm = () => {
   };
   console.log(category);
   const handleCategoryChange = async () => {
-    const { data } = await getCategoryApi();
     let categoryId;
-    if (Array.isArray(data)) {
-      for (let i = 0; i < data.length; i++) {
-        return (categoryId = data[i]._id);
+    if (Array.isArray(allCategory)) {
+      for (let i = 0; i < allCategory.length; i++) {
+        console.log(allCategory);
+        return (categoryId = allCategory[i]._id);
       }
       setCategory(categoryId);
       console.log(categoryId);
       return categoryId;
     }
-
-    console.log("categroy data", data);
   };
 
   return (
@@ -126,7 +124,7 @@ const ContentCreationForm = () => {
         onChange={() => handleCategoryChange}
         required
       >
-        {allCategory?.map((cat) => (
+        {allCategory?.map((cat: ICategory) => (
           <SelectItem key={cat._id} value={cat._id}>
             {cat.name}
           </SelectItem>
