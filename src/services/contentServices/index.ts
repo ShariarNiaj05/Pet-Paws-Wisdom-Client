@@ -5,25 +5,26 @@ import nexiosInstance from "@/config/nexios.config";
 import { jwtDecode } from "jwt-decode";
 import { cookies } from "next/headers";
 
+type IContent = {
+  author: string;
+  title: string;
+  body: string;
+  category: string;
+  tags?: string[];
+  isPremium: boolean;
+  upvotes: number;
+  downvotes: number;
+  createdAt?: Date;
+  updatedAt?: Date;
+};
 interface ServiceResponse {
   success: boolean;
   token?: string;
   message: string;
-  data: {
-    author: string;
-    title: string;
-    body: string;
-    category: string;
-    tags?: string[];
-    isPremium: boolean;
-    upvotes: number;
-    downvotes: number;
-    createdAt?: Date;
-    updatedAt?: Date;
-  };
+  data: IContent;
 }
 
-/* export const registerUser = async (userData: any) => {
+export const createContentApi = async (payload: any) => {
   try {
     const { data } = await nexiosInstance.post<AuthResponse>(
       "/auth/register",
@@ -39,7 +40,7 @@ interface ServiceResponse {
   } catch (error: any) {
     throw new Error(error);
   }
-}; */
+};
 
 /* export const loginUser = async (userData: any) => {
   try {
