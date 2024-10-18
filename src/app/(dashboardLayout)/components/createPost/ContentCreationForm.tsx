@@ -45,7 +45,6 @@ const ContentCreationForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
     const payload = {
       title,
       body,
