@@ -37,7 +37,7 @@ const PostEditor = ({ onContentChange }) => {
     }
   }, [onContentChange]);
 
-  useEffect(() => {
+  /*  useEffect(() => {
     if (editorRef.current) {
       quillInstance = new Quill(editorRef.current, {
         theme: "snow",
@@ -81,7 +81,7 @@ const PostEditor = ({ onContentChange }) => {
         }
       };
     };
-  }, []);
+  }, []); */
 
   return <div ref={editorRef} style={{ height: "300px" }} />;
 };
