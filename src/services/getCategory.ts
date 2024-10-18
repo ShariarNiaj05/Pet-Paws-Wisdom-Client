@@ -1,16 +1,17 @@
 import nexiosInstance from "@/config/nexios.config";
 
-interface ICategory {
-  data: {
-    _id?: string;
-    name: string;
-    description?: string;
-    createdAt?: Date;
-    updatedAt?: Date;
-  };
+export interface ICategory {
+  _id?: string;
+  name: string;
+  description?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+interface ICategoryResponse {
+  data: ICategory;
 }
 export const getCategoryApi = async () => {
-  const result = await nexiosInstance.get<ICategory>("/category");
+  const result = await nexiosInstance.get<ICategoryResponse>("/category");
   const data = result?.data;
 
   //   console.log("cateogry resuult", data);

@@ -80,15 +80,16 @@ const ContentCreationForm = () => {
       setImage(e.target.files[0]);
     }
   };
-
+  console.log(category);
   const handleCategoryChange = async () => {
     const { data } = await getCategoryApi();
     let categoryId;
     if (Array.isArray(data)) {
       for (let i = 0; i < data.length; i++) {
-        categoryId = data[i]._id;
+        return (categoryId = data[i]._id);
       }
       setCategory(categoryId);
+      console.log(categoryId);
       return categoryId;
     }
 
