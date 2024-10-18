@@ -36,7 +36,7 @@ const formats = [
   "image",
 ];
 const ContentCreationForm = () => {
-  const user = useUser();
+  const { user } = useUser();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [category, setCategory] = useState("");
@@ -56,7 +56,7 @@ const ContentCreationForm = () => {
       isPremium,
       image,
     };
-    await createContentApi(payload);
+    await createContentApi(payload, user?._id);
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
