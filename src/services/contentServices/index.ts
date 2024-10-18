@@ -41,7 +41,7 @@ interface ServiceResponse {
   }
 }; */
 
-export const loginUser = async (userData: any) => {
+/* export const loginUser = async (userData: any) => {
   try {
     const { data } = await nexiosInstance.post<AuthResponse>(
       "/auth/login",
@@ -61,9 +61,9 @@ export const loginUser = async (userData: any) => {
   } catch (error: any) {
     throw new Error(error);
   }
-};
+}; */
 
-export const getCurrentUser = async () => {
+/* export const getCurrentUser = async () => {
   const accessToken = cookies().get("accessToken")?.value;
 
   let decodedToken = null;
@@ -81,3 +81,4 @@ export const getCurrentUser = async () => {
 
   return decodedToken;
 };
+ */
