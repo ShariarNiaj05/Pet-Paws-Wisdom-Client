@@ -68,7 +68,9 @@ const ContentCreationForm = () => {
   };
 
   const handleCategoryChange = async () => {
-    const category = await getCategoryApi();
+    const { data } = await getCategoryApi();
+
+    console.log("categroy data", data);
   };
 
   return (
