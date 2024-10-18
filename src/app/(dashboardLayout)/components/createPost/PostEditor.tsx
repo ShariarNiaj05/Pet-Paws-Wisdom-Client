@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Quill from "quill";
+// import Quill from "quill";
 import "quill/dist/quill.snow.css";
 
 const PostEditor = ({ onContentChange }) => {
   const editorRef = useRef<HTMLDivElement>(null);
-  let quillInstance: Quill | null = null;
+  // let quillInstance: Quill | null = null;
   const [quillInstance, setQuillInstance] = useState<any>(null);
 
   useEffect(() => {
