@@ -1,5 +1,5 @@
-const NewPost = () => {
+const NewPostPage = () => {
   return <div>Create New Post</div>;
 };
 
-export default NewPost;
+export default NewPostPage;
