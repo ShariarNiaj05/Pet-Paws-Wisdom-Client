@@ -69,12 +69,14 @@ const ContentCreationForm = () => {
 
   const handleCategoryChange = async () => {
     const { data } = await getCategoryApi();
+    let categoryId = null;
     if (Array.isArray(data)) {
       for (let i = 0; i < data.length; i++) {
-        setCategory = data[i]._id;
-        // console.log("element", element);
+        categoryId = data[i]._id;
       }
+      return categoryId;
     }
+    setCategory(categoryId);
     console.log("categroy data", data);
   };
 
@@ -104,7 +106,7 @@ const ContentCreationForm = () => {
       <Select
         label="Category"
         value={category}
-        onChange={() => setCategory(handleCategoryChange)}
+        onChange={() => handleCategoryChange}
         required
       >
         <SelectItem key="tip" value="tip">
