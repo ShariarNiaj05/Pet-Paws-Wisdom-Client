@@ -2,8 +2,6 @@
 "use server";
 
 import nexiosInstance from "@/config/nexios.config";
-import { jwtDecode } from "jwt-decode";
-import { cookies } from "next/headers";
 
 type IContent = {
   author: string;
