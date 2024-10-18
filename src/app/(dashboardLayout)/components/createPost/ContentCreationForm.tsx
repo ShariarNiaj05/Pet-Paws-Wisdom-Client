@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button, Input, Switch, Select, SelectItem } from "@nextui-org/react";
 import dynamic from "next/dynamic";
+import "react-quill/dist/quill.snow.css"; // Import Quill styles
 
 const QuillNoSSRWrapper = dynamic(import("react-quill"), {
   ssr: false,
@@ -66,13 +67,18 @@ const ContentCreationForm = () => {
         required
       />
 
-      <QuillNoSSRWrapper
-        modules={modules}
-        formats={formats}
-        value={body}
-        onChange={setBody}
-        theme="snow"
-      />
+      <div className="quill-container">
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Body
+        </label>
+        <QuillNoSSRWrapper
+          modules={modules}
+          formats={formats}
+          value={body}
+          onChange={setBody}
+          theme="snow"
+        />
+      </div>
 
       <Select
         label="Category"
