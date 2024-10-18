@@ -1,3 +1,4 @@
+"use client";
 import { Checkbox } from "@nextui-org/react";
 
 const PremiumContentCheckbox = ({ isPremium, onTogglePremium }) => (
