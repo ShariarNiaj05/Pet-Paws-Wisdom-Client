@@ -59,7 +59,7 @@ const ContentCreationForm = () => {
 
     fetchCategories();
   }, []);
-
+  console.log(allCategory);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(body);
@@ -72,6 +72,7 @@ const ContentCreationForm = () => {
       image,
       author: user?._id,
     };
+    console.log(payload);
     await createContentApi(payload);
   };
 
