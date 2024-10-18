@@ -122,7 +122,8 @@ const ContentCreationForm = () => {
       <Select
         label="Category"
         value={category}
-        onChange={() => handleCategoryChange}
+        // onChange={() => handleCategoryChange}
+        onChange={(value) => setCategory(value)}
         required
       >
         {allCategory?.map((cat: ICategory) => (
