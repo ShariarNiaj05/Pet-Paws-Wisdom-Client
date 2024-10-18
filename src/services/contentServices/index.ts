@@ -26,9 +26,9 @@ interface ServiceResponse {
 
 export const createContentApi = async (payload: any) => {
   try {
-    const { data } = await nexiosInstance.post<AuthResponse>(
+    const { data } = await nexiosInstance.post<ServiceResponse>(
       "/auth/register",
-      userData
+      payload
     );
 
     if (data.success) {
