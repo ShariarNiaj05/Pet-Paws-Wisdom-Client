@@ -67,8 +67,8 @@ const ContentCreationForm = () => {
     }
   };
 
-  const handleCategoryChange = () => {
-    const category = getCategoryApi();
+  const handleCategoryChange = async () => {
+    const category = await getCategoryApi();
   };
 
   return (
@@ -97,7 +97,7 @@ const ContentCreationForm = () => {
       <Select
         label="Category"
         value={category}
-        onChange={(e) => setCategory(getCategoryApi)}
+        onChange={() => setCategory(handleCategoryChange)}
         required
       >
         <SelectItem key="tip" value="tip">
