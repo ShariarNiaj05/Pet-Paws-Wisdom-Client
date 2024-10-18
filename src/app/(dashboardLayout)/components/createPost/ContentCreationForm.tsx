@@ -69,14 +69,15 @@ const ContentCreationForm = () => {
 
   const handleCategoryChange = async () => {
     const { data } = await getCategoryApi();
-    let categoryId = null;
+    let categoryId;
     if (Array.isArray(data)) {
       for (let i = 0; i < data.length; i++) {
         categoryId = data[i]._id;
       }
+      setCategory(categoryId);
       return categoryId;
     }
-    setCategory(categoryId);
+
     console.log("categroy data", data);
   };
 
