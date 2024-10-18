@@ -1,10 +1,5 @@
 const NewPostPage = () => {
-  const onSubmit = {};
-  return (
-    <div>
-      <CreatePostForm onSubmit={onSubmit} />
-    </div>
-  );
+  return <div>create post</div>;
 };
 
 export default NewPostPage;
