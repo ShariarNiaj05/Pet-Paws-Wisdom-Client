@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.quill-container {
+  height: 300px; /* Adjust as needed */
+}
+
+.quill-container .ql-container {
+  height: calc(100% - 42px);
+  overflow-y: auto;
+}
