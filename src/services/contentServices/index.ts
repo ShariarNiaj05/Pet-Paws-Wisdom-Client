@@ -37,7 +37,8 @@ export const createContentApi = async (payload: any) => {
 
     // return data;
   } catch (error: any) {
-    throw new Error(error);
+    console.log(error);
+    throw new Error(error.message);
   }
 };
 
