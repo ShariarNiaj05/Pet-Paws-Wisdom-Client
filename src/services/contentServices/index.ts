@@ -24,7 +24,7 @@ interface ServiceResponse {
 
 export const createContentApi = async (payload: any) => {
   try {
-    const { data } = await nexiosInstance.post<ServiceResponse>(
+    const response = await nexiosInstance.post<ServiceResponse>(
       "/content",
       payload
     );
@@ -33,8 +33,9 @@ export const createContentApi = async (payload: any) => {
       cookies().set("accessToken", data?.data?.accessToken);
       cookies().set("refreshToken", data?.data?.refreshToken);
     } */
+    console.log("content post response", response);
 
-    return data;
+    // return data;
   } catch (error: any) {
     throw new Error(error);
   }
