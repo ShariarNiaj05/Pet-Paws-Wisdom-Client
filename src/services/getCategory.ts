@@ -11,7 +11,7 @@ interface ICategoryResponse {
   data: ICategory;
 }
 export const getCategoryApi = async () => {
-  const result = await nexiosInstance.get<ICategoryResponse>("/category");
+  const result = await nexiosInstance.get<ICategoryResponse[]>("/category");
   const data = result?.data;
 
   //   console.log("cateogry resuult", data);
