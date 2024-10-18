@@ -1,5 +1,11 @@
+import ContentCreationForm from "@/app/(dashboardLayout)/components/createPost/ContentCreationForm";
+
 const NewPostPage = () => {
-  return <div>create post</div>;
+  return (
+    <div>
+      <ContentCreationForm />
+    </div>
+  );
 };
 
 export default NewPostPage;
