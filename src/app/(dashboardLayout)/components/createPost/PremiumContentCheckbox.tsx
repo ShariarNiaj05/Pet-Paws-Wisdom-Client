@@ -7,3 +7,5 @@ const PremiumContentCheckbox = ({ isPremium, onTogglePremium }) => (
     label="Mark as Premium Content"
   />
 );
+
+export default PremiumContentCheckbox;
