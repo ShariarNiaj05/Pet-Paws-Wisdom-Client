@@ -129,12 +129,6 @@ const ContentCreationForm = () => {
             {cat.name}
           </SelectItem>
         ))}
-        {/*  <SelectItem key="tip" value="tip">
-          Tip
-        </SelectItem>
-        <SelectItem key="story" value="story">
-          Story
-        </SelectItem> */}
       </Select>
 
       <Input
