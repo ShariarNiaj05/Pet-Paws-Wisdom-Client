@@ -1,5 +1,12 @@
+import CreatePostForm from "@/app/(dashboardLayout)/components/createPost/CreatePostForm";
+
 const NewPostPage = () => {
-  return <div>Create New Post</div>;
+  const onSubmit = {};
+  return (
+    <div>
+      <CreatePostForm onSubmit={onSubmit} />
+    </div>
+  );
 };
 
 export default NewPostPage;
