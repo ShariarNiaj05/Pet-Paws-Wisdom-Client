@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useEffect } from "react";
 import { Button, Input, Switch, Select, SelectItem } from "@nextui-org/react";
 import dynamic from "next/dynamic";
@@ -36,6 +37,25 @@ const ContentCreationForm = () => {
   const [isPremium, setIsPremium] = useState(false);
   const [image, setImage] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Implement form submission logic
+    console.log({
+      title,
+      body,
+      category,
+      tags: tags.split(","),
+      isPremium,
+      image,
+    });
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
