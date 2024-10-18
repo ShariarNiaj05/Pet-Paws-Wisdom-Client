@@ -70,11 +70,12 @@ const ContentCreationForm = () => {
         required
       />
 
-      <div className="quill-container">
+      <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Body
         </label>
         <QuillNoSSRWrapper
+          className="quill-container"
           modules={modules}
           formats={formats}
           value={body}
