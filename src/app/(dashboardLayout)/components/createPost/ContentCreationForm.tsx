@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
 import { createContentApi } from "@/services/contentServices";
 import { useUser } from "@/context/user.provider";
-import { getCategoryApi } from "@/services/getCategory";
+import { getCategoryApi, ICategory } from "@/services/getCategory";
 
 const QuillNoSSRWrapper = dynamic(
   () => import("react-quill").then((mod) => mod.default),
@@ -40,7 +40,7 @@ const ContentCreationForm = () => {
   const { user } = useUser();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [allCategory, setAllCategory] = useState([]);
+  const [allCategory, setAllCategory] = useState<ICategory[]>([]);
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState("");
   const [isPremium, setIsPremium] = useState(false);
