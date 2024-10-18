@@ -1,3 +1,4 @@
+"use client";
 import { Select } from "@nextui-org/react";
 
 const CategorySelector = ({ onCategoryChange }) => (
