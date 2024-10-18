@@ -55,8 +55,9 @@ const ContentCreationForm = () => {
       tags: tags.split(","),
       isPremium,
       image,
+      author: user?._id,
     };
-    await createContentApi(payload, user?._id);
+    await createContentApi(payload);
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

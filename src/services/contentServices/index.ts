@@ -22,7 +22,10 @@ interface ServiceResponse {
   data: IContent;
 }
 
-export const createContentApi = async (payload: any) => {
+export const createContentApi = async (
+  payload: Partial<IContent>
+  // userId: string
+) => {
   try {
     const response = await nexiosInstance.post<ServiceResponse>(
       "/content",
