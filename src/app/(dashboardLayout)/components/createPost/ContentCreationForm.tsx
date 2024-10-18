@@ -29,6 +29,14 @@ const formats = [
   "image",
 ];
 const ContentCreationForm = () => {
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [category, setCategory] = useState("");
+  const [tags, setTags] = useState("");
+  const [isPremium, setIsPremium] = useState(false);
+  const [image, setImage] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <Input
