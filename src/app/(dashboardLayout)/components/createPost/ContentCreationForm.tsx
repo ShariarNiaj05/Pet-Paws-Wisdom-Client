@@ -69,7 +69,12 @@ const ContentCreationForm = () => {
 
   const handleCategoryChange = async () => {
     const { data } = await getCategoryApi();
-
+    if (Array.isArray(data)) {
+      for (let i = 0; i < data.length; i++) {
+        setCategory = data[i]._id;
+        // console.log("element", element);
+      }
+    }
     console.log("categroy data", data);
   };
 
