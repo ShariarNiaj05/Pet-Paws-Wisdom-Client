@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Button, Input, Switch, Select, SelectItem } from "@nextui-org/react";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
@@ -40,11 +40,25 @@ const ContentCreationForm = () => {
   const { user } = useUser();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [allCategory, setAllCategory] = useState([]);
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState("");
   const [isPremium, setIsPremium] = useState(false);
   const [image, setImage] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const { data } = await getCategoryApi();
+        setAllCategory(data); // Store the categories
+      } catch (error) {
+        console.error("Error fetching categories", error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -110,12 +124,17 @@ const ContentCreationForm = () => {
         onChange={() => handleCategoryChange}
         required
       >
-        <SelectItem key="tip" value="tip">
+        {allCategory?.map((cat) => (
+          <SelectItem key={cat._id} value={cat._id}>
+            {cat.name}
+          </SelectItem>
+        ))}
+        {/*  <SelectItem key="tip" value="tip">
           Tip
         </SelectItem>
         <SelectItem key="story" value="story">
           Story
-        </SelectItem>
+        </SelectItem> */}
       </Select>
 
       <Input
