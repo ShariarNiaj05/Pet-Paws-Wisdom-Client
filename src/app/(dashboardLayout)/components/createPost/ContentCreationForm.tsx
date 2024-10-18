@@ -2,6 +2,32 @@ import React, { useState, useRef, useEffect } from "react";
 import { Button, Input, Switch, Select, SelectItem } from "@nextui-org/react";
 import dynamic from "next/dynamic";
 
+const QuillNoSSRWrapper = dynamic(import("react-quill"), {
+  ssr: false,
+  loading: () => <p>Loading editor...</p>,
+});
+
+const modules = {
+  toolbar: [
+    [{ header: "1" }, { header: "2" }],
+    ["bold", "italic", "underline", "strike"],
+    [{ list: "ordered" }, { list: "bullet" }],
+    ["link", "image"],
+    ["clean"],
+  ],
+};
+
+const formats = [
+  "header",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "list",
+  "bullet",
+  "link",
+  "image",
+];
 const ContentCreationForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
