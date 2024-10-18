@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
 import { createContentApi } from "@/services/contentServices";
 import { useUser } from "@/context/user.provider";
+import { getCategoryApi } from "@/services/getCategory";
 
 const QuillNoSSRWrapper = dynamic(
   () => import("react-quill").then((mod) => mod.default),
@@ -66,6 +67,10 @@ const ContentCreationForm = () => {
     }
   };
 
+  const handleCategoryChange = () => {
+    const category = getCategoryApi();
+  };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <Input
@@ -92,7 +97,7 @@ const ContentCreationForm = () => {
       <Select
         label="Category"
         value={category}
-        onChange={(e) => setCategory(e.target.value)}
+        onChange={(e) => setCategory(getCategoryApi)}
         required
       >
         <SelectItem key="tip" value="tip">
