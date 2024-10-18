@@ -1,7 +1,7 @@
 import nexiosInstance from "@/config/nexios.config";
 
 export interface ICategory {
-  _id?: string;
+  _id: string;
   name: string;
   description?: string;
   createdAt?: Date;

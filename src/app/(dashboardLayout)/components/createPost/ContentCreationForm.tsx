@@ -50,8 +50,8 @@ const ContentCreationForm = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await getCategoryApi();
-        setAllCategory(data); // Store the categories
+        const response = await getCategoryApi();
+        setAllCategory(response); // Store the categories
       } catch (error) {
         console.error("Error fetching categories", error);
       }
