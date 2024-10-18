@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import { Button, Input, Switch, Select, SelectItem } from "@nextui-org/react";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
+import { createContentApi } from "@/services/contentServices";
 
 const QuillNoSSRWrapper = dynamic(
   () => import("react-quill").then((mod) => mod.default),
@@ -45,14 +46,15 @@ const ContentCreationForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: Implement form submission logic
-    console.log({
+    const payload = {
       title,
       body,
       category,
       tags: tags.split(","),
       isPremium,
       image,
-    });
+    };
+    await createContentApi(payload);
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
