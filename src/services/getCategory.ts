@@ -9,16 +9,14 @@ export interface ICategory {
   updatedAt?: Date;
 }
 interface ICategoryResponse {
-  data: {
-    success: boolean;
-    data: ICategory[];
-    message: string;
-    meta?: {
-      limit: number;
-      page: number;
-      total: number;
-      totalPage: number;
-    };
+  success: boolean;
+  data: ICategory[];
+  message: string;
+  meta?: {
+    limit: number;
+    page: number;
+    total: number;
+    totalPage: number;
   };
 }
 export const getCategoryApi = async () => {
