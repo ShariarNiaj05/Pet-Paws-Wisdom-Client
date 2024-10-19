@@ -84,12 +84,14 @@ const ContentCreationForm = () => {
       image,
       author: user?._id,
     };
-    console.log(payload);
+    console.log("Submitting payload:", payload); // Debug log
     try {
-      await createContentApi(payload);
-      // Handle successful creation a success message)
+      const response = await createContentApi(payload);
+      console.log("Content creation response:", response); // Debug log
+      // Handle successful creation (e.g., show a success message, redirect, etc.)
     } catch (error) {
       console.error("Error creating content", error);
+      // Handle error (e.g., show error message to user)
     }
   };
 
