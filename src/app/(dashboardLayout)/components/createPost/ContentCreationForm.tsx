@@ -47,6 +47,8 @@ const ContentCreationForm = () => {
   const [image, setImage] = useState<File | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -75,6 +77,15 @@ const ContentCreationForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    if (!user || !user._id) {
+      setError("User is not authenticated. Please log in and try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
     const payload = {
       title,
       body: JSON.stringify(body),
@@ -82,16 +93,26 @@ const ContentCreationForm = () => {
       tags: tags.split(",").map((tag) => tag.trim()),
       isPremium,
       image,
-      author: user?._id,
+      author: user._id,
     };
-    console.log("Submitting payload:", payload); // Debug log
+
     try {
       const response = await createContentApi(payload);
-      console.log("Content creation response:", response); // Debug log
+      console.log("Content creation response:", response);
       // Handle successful creation (e.g., show a success message, redirect, etc.)
-    } catch (error) {
+      // You can add your success handling logic here
+    } catch (error: any) {
       console.error("Error creating content", error);
-      // Handle error (e.g., show error message to user)
+      if (error.response && error.response.data) {
+        setError(
+          error.response.data.message ||
+            "An error occurred while creating the content."
+        );
+      } else {
+        setError("An unexpected error occurred. Please try again.");
+      }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
