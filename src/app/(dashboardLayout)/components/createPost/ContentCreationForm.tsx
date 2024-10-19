@@ -40,7 +40,7 @@ const ContentCreationForm = () => {
   const { user } = useUser();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [allCategory, setAllCategory] = useState<ICategory[]>([]);
+  const [allCategories, setAllCategories] = useState<ICategory[]>([]);
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState("");
   const [isPremium, setIsPremium] = useState(false);
