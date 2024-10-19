@@ -145,11 +145,15 @@ const ContentCreationForm = () => {
         onChange={(e) => setCategory(e.target.value)}
         required
       >
-        {allCategories.map((cat: ICategory) => (
-          <SelectItem key={cat._id} value={cat._id}>
-            {cat.name}
-          </SelectItem>
-        ))}
+        {Array.isArray(allCategories) && allCategories.length > 0 ? (
+          allCategories.map((cat: ICategory) => (
+            <SelectItem key={cat._id} value={cat._id}>
+              {cat.name}
+            </SelectItem>
+          ))
+        ) : (
+          <SelectItem value="">No categories available</SelectItem>
+        )}
       </Select>
 
       <Input
