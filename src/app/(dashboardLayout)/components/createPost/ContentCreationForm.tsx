@@ -45,6 +45,8 @@ const ContentCreationForm = () => {
   const [tags, setTags] = useState("");
   const [isPremium, setIsPremium] = useState(false);
   const [image, setImage] = useState<File | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
