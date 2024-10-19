@@ -101,7 +101,13 @@ const ContentCreationForm = () => {
     }
   };
 
-  console.log(category);
+  if (isLoading) {
+    return <div>Loading categories...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
   /*  const handleCategoryChange = async () => {
     console.log("clicked");
     let categoryId;
