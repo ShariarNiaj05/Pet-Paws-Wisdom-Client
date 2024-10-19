@@ -85,8 +85,9 @@ const ContentCreationForm = () => {
       setImage(e.target.files[0]);
     }
   };
+
   console.log(category);
-  const handleCategoryChange = async () => {
+  /*  const handleCategoryChange = async () => {
     console.log("clicked");
     let categoryId;
     if (Array.isArray(allCategory)) {
@@ -99,7 +100,7 @@ const ContentCreationForm = () => {
       return categoryId;
     }
   };
-
+ */
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <Input
