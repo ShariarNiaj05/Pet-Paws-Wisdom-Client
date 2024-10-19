@@ -8,6 +8,7 @@ export interface ICategory {
   updatedAt?: Date;
 }
 interface ICategoryResponse {
+  success: boolean;
   data: ICategory[];
   message: string;
   meta?: {
