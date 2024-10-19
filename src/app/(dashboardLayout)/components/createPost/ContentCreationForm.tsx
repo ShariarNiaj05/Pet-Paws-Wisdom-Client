@@ -96,7 +96,7 @@ const ContentCreationForm = () => {
       image,
       author: user._id,
     };
-
+    console.log(payload);
     try {
       const response = await createContentApi(payload);
       console.log("Content creation response:", response);
