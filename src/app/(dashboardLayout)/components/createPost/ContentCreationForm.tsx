@@ -123,7 +123,7 @@ const ContentCreationForm = () => {
         label="Category"
         value={category}
         // onChange={() => handleCategoryChange}
-        onChange={(value) => setCategory(value)}
+        onChange={(e) => setCategory(e)}
         required
       >
         {allCategory &&
