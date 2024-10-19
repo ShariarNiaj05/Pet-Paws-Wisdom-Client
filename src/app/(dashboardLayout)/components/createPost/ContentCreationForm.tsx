@@ -51,11 +51,22 @@ const ContentCreationForm = () => {
 
   useEffect(() => {
     const fetchCategories = async () => {
+      setIsLoading(true);
+      setError(null);
       try {
         const response = await getCategoryApi();
-        setAllCategories(response);
+        console.log("API Response:", response); // Debug log
+        if (Array.isArray(response)) {
+          setAllCategories(response);
+        } else {
+          console.error("Unexpected API response format:", response);
+          setError("Unexpected data format received from the server.");
+        }
       } catch (error) {
         console.error("Error fetching categories", error);
+        setError("Failed to fetch categories. Please try again later.");
+      } finally {
+        setIsLoading(false);
       }
     };
 
