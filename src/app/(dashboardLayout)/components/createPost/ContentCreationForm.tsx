@@ -126,11 +126,12 @@ const ContentCreationForm = () => {
         onChange={(value) => setCategory(value)}
         required
       >
-        {allCategory?.map((cat: ICategory) => (
-          <SelectItem key={cat._id} value={cat._id}>
-            {cat.name}
-          </SelectItem>
-        ))}
+        {allCategory &&
+          allCategory?.map((cat: ICategory) => (
+            <SelectItem key={cat._id} value={cat._id}>
+              {cat.name}
+            </SelectItem>
+          ))}
       </Select>
 
       <Input
