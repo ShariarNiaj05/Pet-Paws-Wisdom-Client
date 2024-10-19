@@ -144,6 +144,7 @@ const ContentCreationForm = () => {
     }
   };
  */
+  console.log(user);
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <Input
