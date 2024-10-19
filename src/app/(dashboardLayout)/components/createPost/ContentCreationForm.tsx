@@ -214,7 +214,9 @@ const ContentCreationForm = () => {
         />
         <span>Premium Content</span>
       </div>
-
+      <div>
+        <p>Current user ID: {user?._id || "Not available"}</p>
+      </div>
       <Button type="submit" color="primary" disabled={isSubmitting}>
         {isSubmitting ? "Creating..." : "Create Post"}
       </Button>
