@@ -214,8 +214,8 @@ const ContentCreationForm = () => {
         <span>Premium Content</span>
       </div>
 
-      <Button type="submit" color="primary">
-        Create Post
+      <Button type="submit" color="primary" disabled={isSubmitting}>
+        {isSubmitting ? "Creating..." : "Create Post"}
       </Button>
     </form>
   );
