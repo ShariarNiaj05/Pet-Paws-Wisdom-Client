@@ -51,7 +51,7 @@ const ContentCreationForm = () => {
     const fetchCategories = async () => {
       try {
         const response = await getCategoryApi();
-        setAllCategories(response); // Store the categories
+        setAllCategories(response);
       } catch (error) {
         console.error("Error fetching categories", error);
       }
