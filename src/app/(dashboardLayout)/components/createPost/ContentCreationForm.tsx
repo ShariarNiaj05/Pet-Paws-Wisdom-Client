@@ -158,7 +158,9 @@ const ContentCreationForm = () => {
             </SelectItem>
           ))
         ) : (
-          <SelectItem value="">No categories available</SelectItem>
+          <SelectItem key="" value="">
+            No categories available
+          </SelectItem>
         )}
       </Select>
 
