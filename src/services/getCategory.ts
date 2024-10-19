@@ -12,11 +12,8 @@ interface ICategoryResponse {
   message: string;
   meta?: {
     limit: number;
-
     page: number;
-
     total: number;
-
     totalPage: number;
   };
 }
