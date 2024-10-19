@@ -10,6 +10,15 @@ export interface ICategory {
 interface ICategoryResponse {
   data: ICategory[];
   message: string;
+  meta?: {
+    limit: number;
+
+    page: number;
+
+    total: number;
+
+    totalPage: number;
+  };
 }
 export const getCategoryApi = async () => {
   const result = await nexiosInstance.get<ICategoryResponse[]>("/category");
