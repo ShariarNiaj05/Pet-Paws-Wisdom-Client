@@ -62,18 +62,23 @@ const ContentCreationForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(body);
     const payload = {
       title,
       body: JSON.stringify(body),
       category,
-      tags: tags.split(","),
+      tags: tags.split(",").map((tag) => tag.trim()),
       isPremium,
       image,
       author: user?._id,
     };
     console.log(payload);
-    await createContentApi(payload);
+    try {
+      await createContentApi(payload);
+      // Handle successful creation a success message)
+    } catch (error) {
+      console.error("Error creating content", error);
+      // Handle error (e.g., show error message to user)
+    }
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
