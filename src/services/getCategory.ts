@@ -1,4 +1,5 @@
 import nexiosInstance from "@/config/nexios.config";
+import { NexiosResponse } from "nexios-http/types/interfaces";
 
 export interface ICategory {
   _id: string;
@@ -21,7 +22,9 @@ interface ICategoryResponse {
   };
 }
 export const getCategoryApi = async () => {
-  const result = await nexiosInstance.get<ICategoryResponse[]>("/category");
+  const result = await nexiosInstance.get<NexiosResponse<ICategoryResponse[]>>(
+    "/category"
+  );
   const data = result?.data?.data;
 
   console.log("cateogry resuult", result);
