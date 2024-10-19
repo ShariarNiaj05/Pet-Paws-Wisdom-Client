@@ -8,14 +8,16 @@ export interface ICategory {
   updatedAt?: Date;
 }
 interface ICategoryResponse {
-  success: boolean;
-  data: ICategory[];
-  message: string;
-  meta?: {
-    limit: number;
-    page: number;
-    total: number;
-    totalPage: number;
+  data: {
+    success: boolean;
+    data: ICategory[];
+    message: string;
+    meta?: {
+      limit: number;
+      page: number;
+      total: number;
+      totalPage: number;
+    };
   };
 }
 export const getCategoryApi = async () => {
