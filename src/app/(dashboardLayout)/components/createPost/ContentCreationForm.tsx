@@ -77,7 +77,6 @@ const ContentCreationForm = () => {
       // Handle successful creation a success message)
     } catch (error) {
       console.error("Error creating content", error);
-      // Handle error (e.g., show error message to user)
     }
   };
 
