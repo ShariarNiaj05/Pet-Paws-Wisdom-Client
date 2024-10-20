@@ -94,7 +94,7 @@ const ContentCreationForm = () => {
       category,
       tags: tags.split(",").map((tag) => tag.trim()),
       isPremium,
-      image,
+      // image,
       author: user._id,
     };
     console.log(payload);
