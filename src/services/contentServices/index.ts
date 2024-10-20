@@ -40,7 +40,8 @@ export const createContentApi = async (
 
     return response.data.data;
   } catch (error: any) {
-    console.log(error);
+    console.error("Error in createContentApi:", error);
+
     throw new Error(error.message);
   }
 };
