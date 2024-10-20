@@ -58,7 +58,8 @@ const ContentCreationForm = () => {
       setError(null);
       try {
         const response = await getCategoryApi();
-        console.log("API Response:", response); // Debug log
+        console.log("API Response:", response);
+
         if (Array.isArray(response)) {
           setAllCategories(response);
         } else {
