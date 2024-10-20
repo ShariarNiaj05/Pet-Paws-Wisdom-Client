@@ -32,7 +32,7 @@ const nexiosInstance = new Nexios(defaultConfig);
 
 // Add a request interceptor for logging
 nexiosInstance.interceptors.request.use((config) => {
-  console.log("Request headers:", config.headers);
+  console.log("Request config:", config);
   return config;
 });
 
