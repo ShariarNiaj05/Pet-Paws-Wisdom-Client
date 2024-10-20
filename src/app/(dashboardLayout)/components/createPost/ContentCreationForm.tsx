@@ -90,7 +90,7 @@ const ContentCreationForm = () => {
 
     const payload = {
       title,
-      body: JSON.stringify(body),
+      body,
       category,
       tags: tags.split(",").map((tag) => tag.trim()),
       isPremium,
