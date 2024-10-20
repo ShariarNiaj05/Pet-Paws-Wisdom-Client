@@ -38,7 +38,7 @@ export const createContentApi = async (
     } */
     console.log("content post response", response);
 
-    // return data;
+    return response.data.data;
   } catch (error: any) {
     console.log(error);
     throw new Error(error.message);
