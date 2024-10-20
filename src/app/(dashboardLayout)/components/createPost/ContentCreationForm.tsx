@@ -81,6 +81,14 @@ const ContentCreationForm = () => {
     console.log("Current cookies:", document.cookie);
   }
 
+  function checkCookies() {
+    console.log("All cookies:", document.cookie);
+    const accessToken = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("accessToken="));
+    console.log("Access Token cookie:", accessToken);
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -104,7 +112,7 @@ const ContentCreationForm = () => {
     console.log(payload);
     try {
       logCookies();
-
+      checkCookies();
       const response = await createContentApi(payload);
       console.log("Content creation response:", response);
       // Handle successful creation (e.g., show a success message, redirect, etc.)
