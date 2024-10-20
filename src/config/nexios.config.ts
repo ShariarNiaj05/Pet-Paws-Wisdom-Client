@@ -10,11 +10,12 @@ const defaultConfig: NexiosOptions = {
   },
   // credentials: "include",
   timeout: 10000,
+  withCredentials: true,
 };
 
 const nexiosInstance = new Nexios(defaultConfig);
 
-nexiosInstance.interceptors.request.use((config) => {
+/* nexiosInstance.interceptors.request.use((config) => {
   const token = document.cookie
     .split("; ")
     .find((row) => row.startsWith("accessToken="))
@@ -27,6 +28,6 @@ nexiosInstance.interceptors.request.use((config) => {
   }
 
   return config;
-});
+}); */
 
 export default nexiosInstance;
