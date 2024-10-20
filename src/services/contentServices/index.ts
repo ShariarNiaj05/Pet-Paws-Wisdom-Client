@@ -29,7 +29,13 @@ export const createContentApi = async (
   try {
     const response = await nexiosInstance.post<ServiceResponse>(
       "/content",
-      payload
+      payload,
+      {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
 
     /* if (data.success) {
