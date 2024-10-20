@@ -30,7 +30,6 @@ const nexiosInstance = new Nexios(defaultConfig);
   return config;
 }); */
 
-// Add a request interceptor for logging
 nexiosInstance.interceptors.request.use((config) => {
   console.log("Request config:", config);
   return config;
