@@ -47,6 +47,11 @@ export const createContentApi = async (
     return response.data.data;
   } catch (error: any) {
     console.error("Error in createContentApi:", error);
+    if (error.response) {
+      console.error("Response data:", error.response.data);
+      console.error("Response status:", error.response.status);
+      console.error("Response headers:", error.response.headers);
+    }
 
     throw new Error(error.message);
   }
