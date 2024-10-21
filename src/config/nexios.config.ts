@@ -8,7 +8,7 @@ const defaultConfig: NexiosOptions = {
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
-    cookies: cookies(),
+    cookies,
   },
   credentials: "include",
   timeout: 10000,
@@ -32,9 +32,21 @@ const nexiosInstance = new Nexios(defaultConfig);
   return config;
 }); */
 
-nexiosInstance.interceptors.request.use((config) => {
-  console.log("Request config:", config);
-  return config;
-});
+if (typeof window !== "undefined") {
+  nexiosInstance.interceptors.request.use((config) => {
+    // Get accessToken from document.cookies (on client-side)
+    const token = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("accessToken="))
+      ?.split("=")[1];
+
+    if (token) {
+      config.headers = config.headers || {};
+      config.headers["Authorization"] = `Bearer ${token}`;
+    }
+
+    return config;
+  });
+}
 
 export default nexiosInstance;
