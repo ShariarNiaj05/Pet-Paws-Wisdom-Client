@@ -7,6 +7,7 @@ const defaultConfig: NexiosOptions = {
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
+    Cookie: document.cookie,
   },
   credentials: "include",
   timeout: 10000,
