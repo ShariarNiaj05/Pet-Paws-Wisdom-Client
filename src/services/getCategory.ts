@@ -25,6 +25,6 @@ export const getCategoryApi = async () => {
   );
   const data = result?.data?.data;
 
-  console.log("cateogry resuult", result);
+  // console.log("cateogry resuult", result);
   return data;
 };
