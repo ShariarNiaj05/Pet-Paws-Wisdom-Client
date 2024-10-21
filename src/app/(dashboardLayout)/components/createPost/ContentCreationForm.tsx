@@ -67,7 +67,7 @@ const ContentCreationForm = () => {
           setError("Unexpected data format received from the server.");
         }
       } catch (error) {
-        console.error("Error fetching categories", error);
+        // console.error("Error fetching categories", error);
         setError("Failed to fetch categories. Please try again later.");
       } finally {
         setIsLoading(false);
