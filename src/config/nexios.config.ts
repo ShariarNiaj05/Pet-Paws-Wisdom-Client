@@ -42,7 +42,7 @@ if (typeof window !== "undefined") {
 
     if (token) {
       config.headers = config.headers || {};
-      config.headers["Authorization"] = `Bearer ${token}`;
+      config.headers["Authorization"] = `${token}`;
     }
 
     return config;
