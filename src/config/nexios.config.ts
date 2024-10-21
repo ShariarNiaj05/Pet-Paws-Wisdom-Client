@@ -8,7 +8,7 @@ const defaultConfig: NexiosOptions = {
     "Content-Type": "application/json",
     Accept: "application/json",
   },
-  // credentials: "include",
+  credentials: "include",
   timeout: 10000,
   withCredentials: true,
 };
