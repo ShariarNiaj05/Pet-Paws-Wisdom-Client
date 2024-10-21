@@ -63,7 +63,7 @@ const ContentCreationForm = () => {
         if (Array.isArray(response)) {
           setAllCategories(response);
         } else {
-          console.error("Unexpected API response format:", response);
+          // console.error("Unexpected API response format:", response);
           setError("Unexpected data format received from the server.");
         }
       } catch (error) {
