@@ -43,25 +43,4 @@ if (typeof window !== "undefined") {
   });
 }
 
-// Add response interceptor
-
-// nexiosInstance.interceptors.request.use((config) => {
-//   const accessToken = cookies().get("accessToken")?.value;
-
-//   if (accessToken) {
-//     config.headers = {
-//       ...config.headers,
-//       Authorization: `Bearer ${accessToken}`,
-//     };
-//   }
-
-//   return config;
-// });
-
-// // Add response interceptor
-// nexiosInstance.interceptors.response.use((response) => {
-//   // Transform response data if needed
-//   return response;
-// });
-
 export default nexiosInstance;
