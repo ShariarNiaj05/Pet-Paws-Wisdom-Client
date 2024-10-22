@@ -7,7 +7,7 @@ const axiosSecureInstance = () => {
   });
   axiosSecure.defaults.headers.post["Content-Type"] = "application/json";
   axiosSecure.defaults.headers["Accept"] = "application/json";
-  //   axiosSecure.timeout = 300000;
+  axiosSecure.defaults.timeout = 300000;
 
   //   const logOut = () => {
   //     return signOut(auth);

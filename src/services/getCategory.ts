@@ -1,3 +1,4 @@
+import axiosSecureInstance from "@/config/axiosSecure.config";
 import nexiosInstance from "@/config/nexios.config";
 import { NexiosResponse } from "nexios-http/types/interfaces";
 import { cookies } from "next/headers";
@@ -27,7 +28,7 @@ export const getCategoryApi = async () => {
     "/category",
     { headers: { accessToken: accessToken } }
   ); */
-  const result = await axiosSecureInstance.get<>("/category", {
+  const result = await axiosSecureInstance.get("/category", {
     headers: { accessToken: accessToken },
   });
   const data = result?.data?.data;
