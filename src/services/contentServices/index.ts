@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
+import axiosSecureInstance from "@/config/axiosSecure.config";
 import nexiosInstance from "@/config/nexios.config";
 import { cookies } from "next/headers";
 
@@ -29,11 +30,14 @@ export const createContentApi = async (
   // userId: string
 ) => {
   try {
-    const response = await nexiosInstance.post<ServiceResponse>(
+    /*   const response = await nexiosInstance.post<ServiceResponse>(
       "/content",
       payload,
       { headers: { accessToken: accessToken } }
-    );
+    ); */
+    const response = await axiosSecureInstance.post("/content", payload, {
+      headers: { accessToken: accessToken },
+    });
 
     /* if (data.success) {
       cookies().set("accessToken", data?.data?.accessToken);
