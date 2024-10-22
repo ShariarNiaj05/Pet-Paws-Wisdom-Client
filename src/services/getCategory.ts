@@ -1,3 +1,4 @@
+"use server";
 import nexiosInstance from "@/config/nexios.config";
 import { NexiosResponse } from "nexios-http/types/interfaces";
 import { cookies } from "next/headers";
