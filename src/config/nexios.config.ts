@@ -1,6 +1,5 @@
 import { Nexios } from "nexios-http";
 import { NexiosOptions } from "nexios-http/types/interfaces";
-import { cookies } from "next/headers";
 
 // Default configuration for Nexios
 const defaultConfig: NexiosOptions = {
@@ -19,7 +18,7 @@ const nexiosInstance = new Nexios(defaultConfig);
 if (typeof window !== "undefined") {
   nexiosInstance.interceptors.request.use((config) => {
     // Get accessToken from document.cookies (on client-side)
-    const accessToken = cookies().get("accessToken")?.value;
+    /* const accessToken = cookies().get("accessToken")?.value;
 
     if (accessToken) {
       config.headers = {
@@ -28,9 +27,8 @@ if (typeof window !== "undefined") {
       };
     }
 
-    return config;
-
-    /* const token = document.cookie
+    return config; */
+    const token = document.cookie
       .split("; ")
       .find((row) => row.startsWith("accessToken="))
       ?.split("=")[1];
@@ -41,7 +39,7 @@ if (typeof window !== "undefined") {
       config.headers.Authorization = token;
       config.headers["Authorization"] = `${token}`;
     }
-    return config; */
+    return config;
   });
 }
 
