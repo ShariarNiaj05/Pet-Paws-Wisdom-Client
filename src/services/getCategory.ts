@@ -1,5 +1,3 @@
-"use server";
-import axiosSecureInstance from "@/config/axiosSecure.config";
 import nexiosInstance from "@/config/nexios.config";
 import { NexiosResponse } from "nexios-http/types/interfaces";
 import { cookies } from "next/headers";
