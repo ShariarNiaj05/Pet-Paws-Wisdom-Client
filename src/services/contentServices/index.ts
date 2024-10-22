@@ -2,6 +2,7 @@
 "use server";
 
 import nexiosInstance from "@/config/nexios.config";
+import { cookies } from "next/headers";
 
 type IContent = {
   author: string;
@@ -22,6 +23,7 @@ interface ServiceResponse {
   data: IContent;
 }
 
+const accessToken = cookies().get("accessToken")?.value as string;
 export const createContentApi = async (
   payload: Partial<IContent>
   // userId: string
@@ -29,14 +31,8 @@ export const createContentApi = async (
   try {
     const response = await nexiosInstance.post<ServiceResponse>(
       "/content",
-      payload
-      /*  {
-        withCredentials: true,
-        headers: {
-          "Content-Type": "application/json",
-
-        },
-      } */
+      payload,
+      { headers: { accessToken: accessToken } }
     );
 
     /* if (data.success) {
