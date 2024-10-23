@@ -19,7 +19,7 @@ const useAxiosSecure = () => {
           error?.response?.status === 401 ||
           error?.response?.status === 403
         ) {
-          logOut()
+          /* logOut()
             .then(() => {
               Swal.fire({
                 icon: "success",
@@ -33,7 +33,7 @@ const useAxiosSecure = () => {
                 title: `${error.message}`,
                 text: "Something went wrong!",
               });
-            });
+            }); */
         }
       }
     );
