@@ -34,6 +34,7 @@ const useAxiosSecure = () => {
                 text: "Something went wrong!",
               });
             }); */
+          console.log("You are not authorized from use axios secure");
         }
       }
     );
