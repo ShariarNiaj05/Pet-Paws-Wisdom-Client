@@ -8,6 +8,7 @@ import "react-quill/dist/quill.snow.css"; // Import Quill styles
 import { createContentApi } from "@/services/contentServices";
 import { useUser } from "@/context/user.provider";
 import { getCategoryApi, ICategory } from "@/services/getCategory";
+import useAxiosSecure from "@/hooks/useAxiosSecure";
 
 const QuillNoSSRWrapper = dynamic(
   () => import("react-quill").then((mod) => mod.default),
@@ -50,7 +51,7 @@ const ContentCreationForm = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const axiosSecure = useAxiosSecure();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -114,7 +115,7 @@ const ContentCreationForm = () => {
     try {
       logCookies();
       checkCookies();
-      const response = await createContentApi(payload);
+      const response = await createContentApi(axiosSecure, payload);
       console.log("Content creation response:", response);
       // Handle successful creation (e.g., show a success message, redirect, etc.)
       // You can add your success handling logic here
