@@ -25,7 +25,9 @@ interface ServiceResponse {
 }
 
 const accessToken = cookies().get("accessToken")?.value as string;
+
 export const createContentApi = async (
+  axiosSecure,
   payload: Partial<IContent>
   // userId: string
 ) => {
@@ -35,7 +37,7 @@ export const createContentApi = async (
       payload,
       { headers: { accessToken: accessToken } }
     ); */
-    const response = await axiosSecureInstance.post("/content", payload, {
+    const response = await axiosSecure.post("/content", payload, {
       headers: { accessToken: accessToken },
     });
 
