@@ -27,19 +27,19 @@ interface ServiceResponse {
 const accessToken = cookies().get("accessToken")?.value as string;
 
 export const createContentApi = async (
-  axiosSecure,
+  // axiosSecure,
   payload: Partial<IContent>
   // userId: string
 ) => {
   try {
-    /*   const response = await nexiosInstance.post<ServiceResponse>(
+    const response = await nexiosInstance.post<ServiceResponse>(
       "/content",
       payload,
       { headers: { accessToken: accessToken } }
-    ); */
-    const response = await axiosSecure.post("/content", payload, {
+    );
+    /* const response = await axiosSecure.post("/content", payload, {
       headers: { accessToken: accessToken },
-    });
+    }); */
 
     /* if (data.success) {
       cookies().set("accessToken", data?.data?.accessToken);

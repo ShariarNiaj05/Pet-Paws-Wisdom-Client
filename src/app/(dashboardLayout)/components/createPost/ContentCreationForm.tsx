@@ -115,7 +115,7 @@ const ContentCreationForm = () => {
     try {
       logCookies();
       checkCookies();
-      const response = await createContentApi(axiosSecure, payload);
+      const response = await createContentApi(payload);
       console.log("Content creation response:", response);
       // Handle successful creation (e.g., show a success message, redirect, etc.)
       // You can add your success handling logic here
