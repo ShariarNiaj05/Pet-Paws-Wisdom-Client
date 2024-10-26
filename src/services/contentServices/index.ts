@@ -51,12 +51,15 @@ export const createContentApi = async (
   } catch (error: any) {
     console.error("Error in createContentApi:", error);
     if (error.response) {
-      console.error("Response data:", error.response.data);
-      console.error("Response status:", error.response.status);
-      console.error("Response headers:", error.response.headers);
+      console.error("Response data createContentApi:", error.response.data);
+      console.error("Response status createContentApi:", error.response.status);
+      console.error(
+        "Response headers createContentApi:",
+        error.response.headers
+      );
     }
 
-    throw Error(error.message);
+    // throw Error(error.message);
   }
 };
 
