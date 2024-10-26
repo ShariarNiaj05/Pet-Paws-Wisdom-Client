@@ -32,6 +32,7 @@ export const createContentApi = async (
   // userId: string
 ) => {
   try {
+    console.log("backend call response", payload);
     const response = await nexiosInstance.post<ServiceResponse>(
       "/content",
       payload,
