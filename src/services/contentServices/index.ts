@@ -56,7 +56,7 @@ export const createContentApi = async (
       console.error("Response headers:", error.response.headers);
     }
 
-    throw new Error(error.message);
+    throw Error(error.message);
   }
 };
 
