@@ -15,32 +15,32 @@ const defaultConfig: NexiosOptions = {
 
 const nexiosInstance = new Nexios(defaultConfig);
 
-// if (typeof window !== "undefined") {
-//   nexiosInstance.interceptors.request.use((config) => {
-//     // Get accessToken from document.cookies (on client-side)
-//     /* const accessToken = cookies().get("accessToken")?.value;
+if (typeof window !== "undefined") {
+  nexiosInstance.interceptors.request.use((config) => {
+    // Get accessToken from document.cookies (on client-side)
+    /* const accessToken = cookies().get("accessToken")?.value;
 
-//     if (accessToken) {
-//       config.headers = {
-//         ...config.headers,
-//         Authorization: accessToken,
-//       };
-//     }
+    if (accessToken) {
+      config.headers = {
+        ...config.headers,
+        Authorization: accessToken,
+      };
+    }
 
-//     return config; */
-//     const token = document.cookie
-//       .split("; ")
-//       .find((row) => row.startsWith("accessToken="))
-//       ?.split("=")[1];
+    return config; */
+    const token = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("accessToken="))
+      ?.split("=")[1];
 
-//     if (token) {
-//       config.Cookie = token;
-//       config.headers = config.headers || {};
-//       config.headers.Authorization = token;
-//       config.headers["Authorization"] = `${token}`;
-//     }
-//     return config;
-//   });
-// }
+    if (token) {
+      config.Cookie = token;
+      config.headers = config.headers || {};
+      config.headers.Authorization = token;
+      config.headers["Authorization"] = `${token}`;
+    }
+    return config;
+  });
+}
 
 export default nexiosInstance;
