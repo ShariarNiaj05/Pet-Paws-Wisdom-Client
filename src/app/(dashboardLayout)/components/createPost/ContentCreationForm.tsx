@@ -101,8 +101,8 @@ const ContentCreationForm = () => {
     }
 
     const payload = {
-      title,
-      body,
+      title: title.trim(),
+      body: body.trim(),
       category,
       tags: tags.split(",").map((tag) => tag.trim()),
       isPremium,
