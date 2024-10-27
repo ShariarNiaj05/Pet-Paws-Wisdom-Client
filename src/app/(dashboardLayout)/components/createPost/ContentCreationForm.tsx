@@ -111,8 +111,8 @@ const ContentCreationForm = () => {
     };
     console.log(payload);
     try {
-      logCookies();
-      checkCookies();
+      // logCookies();
+      // checkCookies();
       const response = await createContentApi(payload);
       console.log("Content creation response:", response);
       // Handle successful creation (e.g., show a success message, redirect, etc.)
