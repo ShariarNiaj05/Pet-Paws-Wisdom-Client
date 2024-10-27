@@ -8,7 +8,6 @@ import "react-quill/dist/quill.snow.css";
 import { createContentApi } from "@/services/contentServices";
 import { useUser } from "@/context/user.provider";
 import { getCategoryApi, ICategory } from "@/services/getCategory";
-import useAxiosSecure from "@/hooks/useAxiosSecure";
 
 const QuillNoSSRWrapper = dynamic(
   () => import("react-quill").then((mod) => mod.default),
