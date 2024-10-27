@@ -35,7 +35,12 @@ export const createContentApi = async (
     const response = await nexiosInstance.post<ServiceResponse>(
       "/content",
       payload,
-      { headers: { accessToken: accessToken } }
+      {
+        headers: {
+          "Content-Type": "application/json",
+          accessToken: accessToken,
+        },
+      }
     );
     /* const response = await axiosSecure.post("/content", payload, {
       headers: { accessToken: accessToken },
