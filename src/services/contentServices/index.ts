@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
-import axiosSecureInstance from "@/config/axiosSecure.config";
 import nexiosInstance from "@/config/nexios.config";
 import { cookies } from "next/headers";
 
