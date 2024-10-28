@@ -9,6 +9,14 @@ const UserProfile = () => {
   const [profilePic, setProfilePic] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const fetchUserProfile = async () => {
+    try {
+      const profileData = await getUserProfileApi(user._id);
+      setUserInfo(profileData);
+    } catch (error) {
+      console.error("Error fetching user profile", error);
+    }
+  };
   const handleProfilePicChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setProfilePic(e.target.files[0]);
