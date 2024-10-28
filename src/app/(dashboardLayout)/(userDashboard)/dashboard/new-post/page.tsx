@@ -2,9 +2,9 @@ import ContentCreationForm from "@/app/(dashboardLayout)/components/createPost/C
 
 const NewPostPage = () => {
   return (
-    <div>
+    <>
       <ContentCreationForm />
-    </div>
+    </>
   );
 };
 
