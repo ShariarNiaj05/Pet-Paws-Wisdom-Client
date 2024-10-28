@@ -8,7 +8,7 @@ export interface ICategory {
   createdAt?: Date;
   updatedAt?: Date;
 }
-interface ICategoryResponse {
+export interface ICategoryResponse {
   success: boolean;
   data: ICategory[];
   message: string;
