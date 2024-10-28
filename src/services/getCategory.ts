@@ -24,8 +24,8 @@ export const getCategoryApi = async () => {
   const result = await nexiosInstance.get<NexiosResponse<ICategoryResponse[]>>(
     "/category"
   );
-  // const result = await axiosSecureInstance.get("/category");
-  const data = result?.data?.data;
+
+  const data: ICategory = result?.data?.data;
 
   // console.log("cateogry resuult", result);
   return data;
