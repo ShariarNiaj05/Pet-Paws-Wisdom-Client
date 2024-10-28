@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
 import { useUser } from "@/context/user.provider";
+import { Avatar, Button, Input, Tab, Tabs } from "@nextui-org/react";
 
-const userProfile = () => {
+const UserProfile = () => {
   const { user } = useUser();
   const [userInfo, setUserInfo] = useState<any | null>(null);
   const [profilePic, setProfilePic] = useState<File | null>(null);
@@ -14,10 +15,13 @@ const userProfile = () => {
         <>
           <Avatar
             src={userInfo.profilePicture || "/default-avatar.png"}
-            size="xl"
+            size="lg"
             className="mb-4"
           />
-          <form onSubmit={handleProfileUpdate} className="w-full space-y-4">
+          <form
+            // onSubmit={handleProfileUpdate}
+            className="w-full space-y-4"
+          >
             <Input
               label="Name"
               value={userInfo.name}
@@ -26,7 +30,7 @@ const userProfile = () => {
               }
               required
               fullWidth
-              bordered
+              // bordered
             />
             <Input
               label="Bio"
@@ -35,13 +39,13 @@ const userProfile = () => {
                 setUserInfo({ ...userInfo, bio: e.target.value })
               }
               fullWidth
-              bordered
+              // bordered
             />
             <div className="space-y-2">
               <input
                 type="file"
                 accept="image/*"
-                onChange={handleProfilePicChange}
+                // onChange={handleProfilePicChange}
                 className="hidden"
                 id="upload"
               />
@@ -63,24 +67,23 @@ const userProfile = () => {
           </form>
 
           <Tabs aria-label="User Profile Tabs" className="w-full mt-8">
-            <Tabs.Item title="Posts">
-              <div className="p-4">
-                {" "}
-                {/* Add code to list user posts here */}{" "}
-              </div>
-            </Tabs.Item>
-            <Tabs.Item title="Followers">
-              <div className="p-4">
-                {" "}
-                {/* Add code to list followers here */}{" "}
-              </div>
-            </Tabs.Item>
-            <Tabs.Item title="Following">
-              <div className="p-4">
-                {" "}
-                {/* Add code to list following here */}{" "}
-              </div>
-            </Tabs.Item>
+            <Tabs>
+              <Tab key="posts" title="Posts" />
+              <Tab key="followers" title="Followers" />
+              <Tab key="following" title="Following" />
+            </Tabs>
+
+            <Tabs key="posts" className="p-4">
+              {/* Add code to list user posts here */}
+            </Tabs>
+
+            <Tabs key="followers" className="p-4">
+              {/* Add code to list followers here */}
+            </Tabs>
+
+            <Tabs key="following" className="p-4">
+              {/* Add code to list following here */}
+            </Tabs>
           </Tabs>
         </>
       )}
@@ -88,4 +91,4 @@ const userProfile = () => {
   );
 };
 
-export default userProfile;
+export default UserProfile;
