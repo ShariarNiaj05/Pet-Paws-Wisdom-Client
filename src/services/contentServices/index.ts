@@ -54,8 +54,6 @@ export const createContentApi = async (
         error.response.headers
       );
     }
-
-    // throw Error(error.message);
   }
 };
 
