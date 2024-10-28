@@ -9,6 +9,27 @@ const UserProfile = () => {
   const [profilePic, setProfilePic] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const handleProfileUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData();
+    if (userInfo) {
+      formData.append("name", userInfo.name);
+      formData.append("bio", userInfo.bio);
+      if (profilePic) {
+        formData.append("profilePicture", profilePic);
+      }
+    }
+
+    try {
+      await updateUserProfileApi(user._id, formData);
+      fetchUserProfile();
+    } catch (error) {
+      console.error("Error updating profile", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="flex flex-col items-center space-y-6 p-6 bg-gray-100 rounded-md shadow-md w-full md:w-3/4 lg:w-1/2 mx-auto">
       {userInfo && (
@@ -18,10 +39,7 @@ const UserProfile = () => {
             size="lg"
             className="mb-4"
           />
-          <form
-            // onSubmit={handleProfileUpdate}
-            className="w-full space-y-4"
-          >
+          <form onSubmit={handleProfileUpdate} className="w-full space-y-4">
             <Input
               label="Name"
               value={userInfo.name}
