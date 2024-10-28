@@ -9,6 +9,11 @@ const UserProfile = () => {
   const [profilePic, setProfilePic] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const handleProfilePicChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setProfilePic(e.target.files[0]);
+    }
+  };
   const handleProfileUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -30,6 +35,7 @@ const UserProfile = () => {
       setIsSubmitting(false);
     }
   };
+
   return (
     <div className="flex flex-col items-center space-y-6 p-6 bg-gray-100 rounded-md shadow-md w-full md:w-3/4 lg:w-1/2 mx-auto">
       {userInfo && (
@@ -63,7 +69,7 @@ const UserProfile = () => {
               <input
                 type="file"
                 accept="image/*"
-                // onChange={handleProfilePicChange}
+                onChange={handleProfilePicChange}
                 className="hidden"
                 id="upload"
               />
