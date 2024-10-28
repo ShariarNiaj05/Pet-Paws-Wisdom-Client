@@ -1,5 +1,12 @@
+import UserProfile from "../../components/userProfile/userProfile";
+
 const UserDashboardPage = () => {
-  return <div>UserDashboardPage</div>;
+  return (
+    <div>
+      <UserProfile />
+      UserDashboardPage
+    </div>
+  );
 };
 
 export default UserDashboardPage;
