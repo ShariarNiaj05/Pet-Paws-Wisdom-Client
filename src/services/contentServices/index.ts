@@ -42,15 +42,6 @@ export const createContentApi = async (
         },
       }
     );
-    /* const response = await axiosSecure.post("/content", payload, {
-      headers: { accessToken: accessToken },
-    }); */
-
-    /* if (data.success) {
-      cookies().set("accessToken", data?.data?.accessToken);
-      cookies().set("refreshToken", data?.data?.refreshToken);
-    } */
-    console.log("content post response", response);
 
     return response.data.data;
   } catch (error: any) {
