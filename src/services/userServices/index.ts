@@ -1,3 +1,5 @@
+"use server";
+
 import nexiosInstance from "@/config/nexios.config";
 import { cookies } from "next/headers";
 const accessToken = cookies().get("accessToken")?.value as string;
