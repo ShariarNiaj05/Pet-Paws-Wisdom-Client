@@ -9,3 +9,24 @@ export const getUserProfileApi = async (userId: string) => {
     throw new Error("Failed to fetch user profile.");
   }
 };
+
+export const updateUserProfileApi = async (
+  userId: string,
+  formData: FormData
+) => {
+  try {
+    const response = await nexiosInstance.put(
+      `/user/profile/${userId}`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error updating user profile:", error);
+    throw new Error("Failed to update user profile.");
+  }
+};
