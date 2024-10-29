@@ -1,5 +1,6 @@
 import nexiosInstance from "@/config/nexios.config";
-
+import { cookies } from "next/headers";
+const accessToken = cookies().get("accessToken")?.value as string;
 export const getUserProfileApi = async (userId: string) => {
   try {
     const response = await nexiosInstance.get(`/users/${userId}`);
@@ -18,6 +19,7 @@ export const updateUserProfileApi = async (
     const response = await nexiosInstance.put(`/users/${userId}`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
+        accessToken: accessToken,
       },
     });
     return response.data;
