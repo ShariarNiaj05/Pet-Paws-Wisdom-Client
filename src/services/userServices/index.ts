@@ -15,15 +15,11 @@ export const updateUserProfileApi = async (
   formData: FormData
 ) => {
   try {
-    const response = await nexiosInstance.put(
-      `/user/profile/${userId}`,
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
+    const response = await nexiosInstance.put(`/users/${userId}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error updating user profile:", error);
