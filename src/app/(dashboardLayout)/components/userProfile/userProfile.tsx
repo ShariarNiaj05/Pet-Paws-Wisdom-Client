@@ -15,7 +15,7 @@ const UserProfile = () => {
     if (!user) return;
     try {
       const profileData = await getUserProfileApi(user._id);
-      console.log(profileData);
+      console.log("profileData", profileData);
       setUserInfo(profileData);
     } catch (error) {
       console.error("Error fetching user profile", error);
