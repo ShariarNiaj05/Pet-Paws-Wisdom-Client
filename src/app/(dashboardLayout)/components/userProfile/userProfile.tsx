@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
 import { useUser } from "@/context/user.provider";
@@ -14,6 +15,7 @@ const UserProfile = () => {
     if (!user) return;
     try {
       const profileData = await getUserProfileApi(user._id);
+      console.log(profileData);
       setUserInfo(profileData);
     } catch (error) {
       console.error("Error fetching user profile", error);
