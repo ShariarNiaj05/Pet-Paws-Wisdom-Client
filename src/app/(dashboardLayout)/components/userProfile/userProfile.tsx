@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useUser } from "@/context/user.provider";
 import { Avatar, Button, Input, Tab, Tabs } from "@nextui-org/react";
+import { getUserProfileApi } from "@/services/userServices";
 
 const UserProfile = () => {
   const { user } = useUser();
@@ -10,6 +11,7 @@ const UserProfile = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const fetchUserProfile = async () => {
+    if (!user) return;
     try {
       const profileData = await getUserProfileApi(user._id);
       setUserInfo(profileData);
