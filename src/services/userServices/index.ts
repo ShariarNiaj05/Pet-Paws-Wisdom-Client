@@ -24,6 +24,8 @@ export const updateUserProfileApi = async (
         accessToken: accessToken,
       },
     });
+
+    console.log("response is api", response);
     return response.data;
   } catch (error) {
     console.error("Error updating user profile:", error);
