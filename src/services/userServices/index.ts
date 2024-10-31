@@ -6,6 +6,7 @@ const accessToken = cookies().get("accessToken")?.value as string;
 export const getUserProfileApi = async (userId: string) => {
   try {
     const response = await nexiosInstance.get(`/users/${userId}`);
+    console.log("response user data", response);
     return response.data;
   } catch (error) {
     console.error("Error fetching user profile:", error);
