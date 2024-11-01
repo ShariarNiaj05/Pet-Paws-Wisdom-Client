@@ -4,6 +4,7 @@ import nexiosInstance from "@/config/nexios.config";
 import { cookies } from "next/headers";
 const accessToken = cookies().get("accessToken")?.value as string;
 export const getUserProfileApi = async (userId: string) => {
+  console.log("userId userId", userId);
   try {
     const response = await nexiosInstance.get(`/users/${userId}`);
     console.log("response user data", response);

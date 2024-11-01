@@ -26,7 +26,7 @@ const UserProfile = () => {
       setProfilePic(e.target.files[0]);
     }
   };
-  /*   const handleProfileUpdate = async (e: React.FormEvent) => {
+  const handleProfileUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     const formData = new FormData();
@@ -46,7 +46,7 @@ const UserProfile = () => {
     } finally {
       setIsSubmitting(false);
     }
-  }; */
+  };
 
   return (
     <div className="flex flex-col items-center space-y-6 p-6 bg-gray-100 rounded-md shadow-md w-full md:w-3/4 lg:w-1/2 mx-auto">
