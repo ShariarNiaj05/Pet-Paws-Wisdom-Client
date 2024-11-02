@@ -43,8 +43,10 @@ export const updateUserProfileApi = async (
 
     console.log("response is api", response);
     return response.data || null;
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error updating user profile:", error);
-    throw new Error("Failed to update user profile.");
+    throw new Error(
+      error.response?.data?.message || "Failed to update user profile"
+    );
   }
 };
