@@ -2,16 +2,21 @@
 
 import nexiosInstance from "@/config/nexios.config";
 import { cookies } from "next/headers";
+
 const accessToken = cookies().get("accessToken")?.value as string;
 export const getUserProfileApi = async (userId: string) => {
-  console.log("userId userId", userId);
+  if (!userId) {
+    throw new Error("User ID is required");
+  }
+
   try {
     const response = await nexiosInstance.get(`/users/${userId}`);
-    console.log("response user data", response);
-    return response.data;
+    return response.data || null;
   } catch (error) {
     console.error("Error fetching user profile:", error);
-    throw new Error("Failed to fetch user profile.");
+    throw new Error(
+      error.response?.data?.message || "Failed to fetch user profile"
+    );
   }
 };
 
