@@ -30,6 +30,9 @@ export const updateUserProfileApi = async (
     throw new Error("User ID is required");
   }
 
+  if (!accessToken) {
+    throw new Error("Authentication required");
+  }
   try {
     const response = await nexiosInstance.put(`/users/${userId}`, formData, {
       headers: {
