@@ -12,6 +12,7 @@ export const getUserProfileApi = async (userId: string) => {
 
   try {
     const response = await nexiosInstance.get(`/users/${userId}`);
+    console.log("response response", response);
     return response.data || null;
   } catch (error: any) {
     console.error("Error fetching user profile:", error);
