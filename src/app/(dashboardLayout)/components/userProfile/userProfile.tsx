@@ -3,7 +3,10 @@
 import { useState } from "react";
 import { useUser } from "@/context/user.provider";
 import { Avatar, Button, Input, Tab, Tabs } from "@nextui-org/react";
-import { getUserProfileApi } from "@/services/userServices";
+import {
+  getUserProfileApi,
+  updateUserProfileApi,
+} from "@/services/userServices";
 
 const UserProfile = () => {
   const { user } = useUser();
@@ -39,6 +42,7 @@ const UserProfile = () => {
     }
 
     try {
+      if (!user) return;
       await updateUserProfileApi(user._id, formData);
       fetchUserProfile();
     } catch (error) {
