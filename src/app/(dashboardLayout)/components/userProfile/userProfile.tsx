@@ -103,26 +103,6 @@ const UserProfile = () => {
               {isSubmitting ? "Updating..." : "Update Profile"}
             </Button>
           </form>
-
-          <Tabs aria-label="User Profile Tabs" className="w-full mt-8">
-            <Tabs>
-              <Tab key="posts" title="Posts" />
-              <Tab key="followers" title="Followers" />
-              <Tab key="following" title="Following" />
-            </Tabs>
-
-            <Tabs key="posts" className="p-4">
-              {/* list user posts here */}
-            </Tabs>
-
-            <Tabs key="followers" className="p-4">
-              {/* Add code to list followers here */}
-            </Tabs>
-
-            <Tabs key="following" className="p-4">
-              {/* Add code to list following here */}
-            </Tabs>
-          </Tabs>
         </>
       )}
     </div>
