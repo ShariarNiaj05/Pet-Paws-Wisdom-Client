@@ -70,7 +70,6 @@ const UserProfile = () => {
               }
               required
               fullWidth
-              // bordered
             />
             <Input
               label="Bio"
@@ -79,7 +78,6 @@ const UserProfile = () => {
                 setUserInfo({ ...userInfo, bio: e.target.value })
               }
               fullWidth
-              // bordered
             />
             <div className="space-y-2">
               <input
@@ -114,7 +112,7 @@ const UserProfile = () => {
             </Tabs>
 
             <Tabs key="posts" className="p-4">
-              {/* Add code to list user posts here */}
+              {/* list user posts here */}
             </Tabs>
 
             <Tabs key="followers" className="p-4">
