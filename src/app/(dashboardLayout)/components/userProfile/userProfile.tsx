@@ -2,7 +2,7 @@
 "use client";
 import { useState } from "react";
 import { useUser } from "@/context/user.provider";
-import { Avatar, Button, Input, Tab, Tabs } from "@nextui-org/react";
+import { Avatar, Button, Input } from "@nextui-org/react";
 import {
   getUserProfileApi,
   updateUserProfileApi,
