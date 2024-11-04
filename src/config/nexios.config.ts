@@ -34,7 +34,7 @@ if (typeof window !== "undefined") {
       ?.split("=")[1];
 
     if (token) {
-      config.Cookie = token;
+      config.Cookie = token as string;
       config.headers = config.headers || {};
       config.headers.Authorization = token;
       config.headers["Authorization"] = `${token}`;
