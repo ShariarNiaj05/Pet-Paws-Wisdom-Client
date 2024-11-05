@@ -18,16 +18,7 @@ const nexiosInstance = new Nexios(defaultConfig);
 if (typeof window !== "undefined") {
   nexiosInstance.interceptors.request.use((config) => {
     // Get accessToken from document.cookies (on client-side)
-    /* const accessToken = cookies().get("accessToken")?.value;
 
-    if (accessToken) {
-      config.headers = {
-        ...config.headers,
-        Authorization: accessToken,
-      };
-    }
-
-    return config; */
     // const token = document.cookie
     //   .split("; ")
     //   .find((row) => row.startsWith("accessToken="))
