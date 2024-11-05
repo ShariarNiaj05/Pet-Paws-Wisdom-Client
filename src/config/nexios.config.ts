@@ -33,12 +33,12 @@ if (typeof window !== "undefined") {
       .find((row) => row.startsWith("accessToken="))
       ?.split("=")[1];
 
-    if (token) {
-      config.Cookie = token as string;
-      config.headers = config.headers || {};
-      config.headers.Authorization = token;
-      config.headers["Authorization"] = `${token}`;
-    }
+    // if (token) {
+    //   // config.Cookie = token as string;
+    //   // config.headers = config.headers || {};
+    //   // config.headers.Authorization = token;
+    //   // config.headers["Authorization"] = `${token}`;
+    // }
     return config;
   });
 }
