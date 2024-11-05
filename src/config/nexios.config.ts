@@ -28,10 +28,10 @@ if (typeof window !== "undefined") {
     }
 
     return config; */
-    const token = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("accessToken="))
-      ?.split("=")[1];
+    // const token = document.cookie
+    //   .split("; ")
+    //   .find((row) => row.startsWith("accessToken="))
+    //   ?.split("=")[1];
 
     // if (token) {
     //   // config.Cookie = token as string;
